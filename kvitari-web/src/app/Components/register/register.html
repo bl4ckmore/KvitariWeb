@@ -1,0 +1,45 @@
+<div class="container py-5 mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card auth-card p-4 p-lg-5">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold text-success">რეგისტრაცია</h2>
+          <p class="text-muted small">შექმენით ბიზნეს პროფილი უფასოდ</p>
+        </div>
+
+        <form (ngSubmit)="onRegister()">
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <label class="form-label fw-bold small">კომპანიის დასახელება</label>
+              <input type="text" [(ngModel)]="registerData.companyName" name="cName" class="form-control form-control-lg" placeholder="შპს ბიზნესი">
+            </div>
+            <div class="col-md-6 mb-4">
+              <label class="form-label fw-bold small">საიდენტიფიკაციო კოდი</label>
+              <input type="text" [(ngModel)]="registerData.identificationNumber" name="idNum" class="form-control form-control-lg" placeholder="200000000">
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label fw-bold small">სამუშაო ელ-ფოსტა</label>
+            <input type="email" [(ngModel)]="registerData.email" name="email" class="form-control form-control-lg" placeholder="info@company.ge">
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label fw-bold small">პაროლი</label>
+            <input type="password" [(ngModel)]="registerData.password" name="pass" class="form-control form-control-lg" placeholder="მინიმუმ 8 სიმბოლო">
+          </div>
+
+          <div *ngIf="errorMsg" class="alert alert-danger border-0 small py-2 mb-4">
+            {{ errorMsg }}
+          </div>
+
+          <button type="submit" class="btn btn-success btn-auth w-100 mb-4 shadow-sm">ანგარიშის შექმნა</button>
+
+          <p class="text-center text-muted small mb-0">
+            უკვე გაქვთ ანგარიში? <a routerLink="/login" class="text-success fw-bold text-decoration-none">ავტორიზაცია</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

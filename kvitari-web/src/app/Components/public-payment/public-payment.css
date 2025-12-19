@@ -1,0 +1,14 @@
+.payment-card {
+  max-width: 450px;
+  width: 90%;
+  border-radius: 30px;
+}
+.btn-bank {
+  border-radius: 16px;
+  font-weight: 700;
+  transition: all 0.3s;
+  border: 2px solid #f1f5f9;
+  background: white;
+}
+.bog-btn:hover { border-color: #ff5e00; background: #fff8f5; }
+.tbc-btn:hover { border-color: #00a3e0; background: #f0faff; }

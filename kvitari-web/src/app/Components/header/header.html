@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm px-3">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-primary fs-4" routerLink="/">
+      Kvitari.ge
+    </a>
+
+    <div class="d-flex align-items-center gap-2">
+      <ng-container *ngIf="api.isLoggedIn()">
+        <a routerLink="/dashboard" routerLinkActive="active" class="nav-link-custom">
+          <i class="bi bi-speedometer2"></i>
+          <span class="d-none d-sm-inline">Dashboard</span>
+        </a>
+        <button (click)="api.logout()" class="btn-logout-custom">
+          <i class="bi bi-box-arrow-right"></i>
+          <span class="d-none d-sm-inline">გამოსვლა</span>
+        </button>
+      </ng-container>
+
+      <ng-container *ngIf="!api.isLoggedIn()">
+        <a routerLink="/login" class="btn btn-outline-primary rounded-pill px-4">შესვლა</a>
+      </ng-container>
+    </div>
+  </div>
+</nav>
+<div class="header-spacer"></div>

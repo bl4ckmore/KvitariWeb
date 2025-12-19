@@ -1,0 +1,54 @@
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 3000 !important; /* PDF-ზე მაღლა */
+  height: 70px;
+}
+
+.header-spacer {
+  height: 70px;
+}
+
+/* მორგებული ლინკების სტილი */
+.nav-link-custom {
+  text-decoration: none;
+  color: #475569;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.nav-link-custom.active {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.btn-logout-custom {
+  background: #fef2f2;
+  color: #dc2626;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn-logout-custom:hover {
+  background: #dc2626;
+  color: white;
+}
+
+/* მობილურისთვის იკონკების ზომის გაზრდა */
+@media (max-width: 576px) {
+  .nav-link-custom, .btn-logout-custom {
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+}

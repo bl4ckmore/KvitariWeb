@@ -1,0 +1,63 @@
+<main>
+  <section class="py-5 mt-4">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-3 fw-bold mb-4" style="color: var(--secondary)">
+            თქვენი ბიზნესის <br><span class="text-primary">ფინანსური ჰაბი</span>
+          </h1>
+          <p class="lead text-muted mb-5">
+            შექმენით ინვოისები წამებში და მიიღეთ გადახდები საქართველოში ყველაზე პოპულარული ბანკების საშუალებით.
+          </p>
+          
+          <div class="d-flex gap-3">
+            <ng-container *ngIf="!api.isLoggedIn()">
+              <a routerLink="/register" class="btn btn-primary btn-auth px-5 shadow">დაიწყე უფასოდ</a>
+              <a routerLink="/login" class="btn btn-outline-dark btn-auth px-5">ავტორიზაცია</a>
+            </ng-container>
+            
+            <a *ngIf="api.isLoggedIn()" routerLink="/dashboard" class="btn btn-primary btn-auth px-5 shadow">ჩემი Dashboard</a>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 d-none d-lg-block">
+          <img src="https://happay.com/blog/wp-content/uploads/sites/12/2023/05/billing-process.webp" class="img-fluid" alt="Billing">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 bg-white border-top">
+    <div class="container py-5">
+      <div class="row g-4 text-center">
+        <div class="col-md-4">
+          <div class="p-4">
+            <div class="bg-primary-subtle text-primary rounded-circle d-inline-flex p-3 mb-3">
+              <i class="bi bi-lightning-fill fs-3"></i>
+            </div>
+            <h5 class="fw-bold">სწრაფი ბილინგი</h5>
+            <p class="text-muted small">ინვოისის შექმნა და გაგზავნა სულ რაღაც 3 კლიკში.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4">
+            <div class="bg-success-subtle text-success rounded-circle d-inline-flex p-3 mb-3">
+              <i class="bi bi-bank fs-3"></i>
+            </div>
+            <h5 class="fw-bold">ბანკებთან ინტეგრაცია</h5>
+            <p class="text-muted small">TBC და BOG ბიზნეს გადახდების სრული მხარდაჭერა.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4">
+            <div class="bg-info-subtle text-info rounded-circle d-inline-flex p-3 mb-3">
+              <i class="bi bi-shield-lock fs-3"></i>
+            </div>
+            <h5 class="fw-bold">უსაფრთხოება</h5>
+            <p class="text-muted small">თქვენი მონაცემები დაცულია საბანკო დონის უსაფრთხოებით.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
