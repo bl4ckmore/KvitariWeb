@@ -1,54 +1,57 @@
 .navbar {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(10px);
-  z-index: 3000 !important; /* PDF-ზე მაღლა */
+  z-index: 3000 !important;
   height: 70px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .header-spacer {
   height: 70px;
 }
 
-/* მორგებული ლინკების სტილი */
 .nav-link-custom {
   text-decoration: none;
   color: #475569;
   font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 12px;
-  display: flex;
+  padding: 8px 14px;
+  border-radius: 999px;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   transition: all 0.2s;
+  border: 1px solid rgba(2, 6, 23, 0.08);
+  background: #fff;
 }
 
 .nav-link-custom.active {
-  background-color: #eff6ff;
-  color: #2563eb;
+  background-color: rgba(13, 110, 253, 0.08);
+  border-color: rgba(13, 110, 253, 0.25);
+  color: #0b5ed7;
 }
 
 .btn-logout-custom {
-  background: #fef2f2;
-  color: #dc2626;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 12px;
-  font-weight: 600;
-  display: flex;
+  background: rgba(220, 53, 69, 0.08);
+  color: #dc3545;
+  border: 1px solid rgba(220, 53, 69, 0.18);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
   transition: all 0.2s;
 }
 
 .btn-logout-custom:hover {
-  background: #dc2626;
-  color: white;
+  background: #dc3545;
+  color: #fff;
 }
 
-/* მობილურისთვის იკონკების ზომის გაზრდა */
 @media (max-width: 576px) {
-  .nav-link-custom, .btn-logout-custom {
+  .nav-link-custom,
+  .btn-logout-custom {
     padding: 10px;
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
 }

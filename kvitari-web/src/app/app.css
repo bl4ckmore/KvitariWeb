@@ -4,13 +4,17 @@
 }
 
 main {
-  /* ჰედერის სიმაღლის გათვალისწინებით, რომ კონტენტი არ დაიმალოს */
-  padding-top: 0; 
+  padding-top: 0;
   display: block;
 }
 
-/* გლუვი გადასვლის ანიმაცია გვერდებისთვის */
+/* smoother */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 0.3s;
+  animation-duration: 0.25s;
+}
+
+/* global body lock for mobile drawer */
+.no-scroll {
+  overflow: hidden !important;
 }

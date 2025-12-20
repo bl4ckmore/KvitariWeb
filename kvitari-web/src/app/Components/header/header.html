@@ -6,20 +6,27 @@
 
     <div class="d-flex align-items-center gap-2">
       <ng-container *ngIf="api.isLoggedIn()">
-        <a routerLink="/dashboard" routerLinkActive="active" class="nav-link-custom">
-          <i class="bi bi-speedometer2"></i>
-          <span class="d-none d-sm-inline">Dashboard</span>
+        <a routerLink="/dashboard/profile" routerLinkActive="active" class="nav-link-custom">
+          <i class="bi bi-person-badge"></i>
+          <span class="d-none d-sm-inline">My Profile</span>
         </a>
-        <button (click)="api.logout()" class="btn-logout-custom">
+
+        <a routerLink="/dashboard/invoices" routerLinkActive="active" class="nav-link-custom">
+          <i class="bi bi-receipt"></i>
+          <span class="d-none d-sm-inline">Invoices</span>
+        </a>
+
+        <button (click)="onLogout()" class="btn-logout-custom">
           <i class="bi bi-box-arrow-right"></i>
-          <span class="d-none d-sm-inline">გამოსვლა</span>
+          <span class="d-none d-sm-inline">Logout</span>
         </button>
       </ng-container>
 
       <ng-container *ngIf="!api.isLoggedIn()">
-        <a routerLink="/login" class="btn btn-outline-primary rounded-pill px-4">შესვლა</a>
+        <a routerLink="/login" class="btn btn-outline-primary rounded-pill px-4">Login</a>
       </ng-container>
     </div>
   </div>
 </nav>
+
 <div class="header-spacer"></div>

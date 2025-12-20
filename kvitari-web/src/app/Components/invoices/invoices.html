@@ -1,0 +1,142 @@
+<div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+
+  <div class="card-header bg-white border-bottom p-3 p-md-4">
+    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+      <div>
+        <div class="h5 mb-1 fw-bold">Invoices</div>
+        <div class="text-muted small">Create, share and track invoice payments</div>
+      </div>
+
+      <button class="btn btn-primary" (click)="showCreateModal = true">
+        <i class="bi bi-plus-lg me-1"></i> New Invoice
+      </button>
+    </div>
+
+    <div class="mt-3" *ngIf="invoices$ | async as invoices">
+      <div class="d-flex flex-wrap gap-2">
+        <span class="badge text-bg-primary px-3 py-2 rounded-pill">
+          Total ₾ {{ getStats(invoices).total | number:'1.2-2' }}
+        </span>
+        <span class="badge text-bg-secondary px-3 py-2 rounded-pill">
+          Count {{ getStats(invoices).count }}
+        </span>
+        <span class="badge text-bg-success px-3 py-2 rounded-pill">
+          Paid {{ getStats(invoices).paid }}
+        </span>
+        <span class="badge text-bg-warning px-3 py-2 rounded-pill">
+          Pending {{ getStats(invoices).pending }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-hover align-middle mb-0">
+      <thead class="table-light">
+        <tr>
+          <th class="ps-3 ps-md-4">ID</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th class="d-none d-md-table-cell">Created</th>
+          <th class="text-end pe-3 pe-md-4">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody *ngIf="invoices$ | async as invoices">
+        <tr *ngFor="let inv of invoices">
+          <td class="ps-3 ps-md-4 fw-bold text-primary">
+            #{{ inv?.id ? (inv.id | slice:0:8) : '--------' }}
+          </td>
+
+          <td class="fw-bold">₾ {{ (inv?.amount ?? 0) | number:'1.2-2' }}</td>
+
+          <td>
+            <span class="badge rounded-pill"
+                  [ngClass]="inv?.isPaid ? 'text-bg-success' : 'text-bg-warning'">
+              {{ inv?.isPaid ? 'Paid' : 'Pending' }}
+            </span>
+          </td>
+
+          <td class="text-muted small d-none d-md-table-cell">
+            {{ inv?.createdAt ? (inv.createdAt | date:'yyyy-MM-dd HH:mm') : '---' }}
+          </td>
+
+          <td class="text-end pe-3 pe-md-4">
+            <div class="btn-group">
+              <button class="btn btn-outline-secondary btn-sm" (click)="openPublic(inv.id)" title="View">
+                <i class="bi bi-eye"></i>
+              </button>
+
+              <button class="btn btn-outline-secondary btn-sm" (click)="copyPayLink(inv.id)" title="Copy link">
+                <i class="bi bi-link-45deg"></i>
+              </button>
+
+              <button *ngIf="!inv?.isPaid" class="btn btn-outline-primary btn-sm d-none d-md-inline-flex"
+                      (click)="pay('tbc', inv.id)" title="Pay TBC">
+                <i class="bi bi-credit-card"></i>
+              </button>
+
+              <button *ngIf="!inv?.isPaid" class="btn btn-outline-primary btn-sm d-none d-md-inline-flex"
+                      (click)="pay('bog', inv.id)" title="Pay BOG">
+                <i class="bi bi-bank"></i>
+              </button>
+
+              <button class="btn btn-outline-danger btn-sm" (click)="deleteInvoice(inv.id)" title="Delete">
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+
+            <!-- Mobile pay buttons -->
+            <div class="d-md-none mt-2" *ngIf="!inv?.isPaid">
+              <div class="d-flex gap-2 justify-content-end">
+                <button class="btn btn-outline-primary btn-sm" (click)="pay('tbc', inv.id)">TBC</button>
+                <button class="btn btn-outline-primary btn-sm" (click)="pay('bog', inv.id)">BOG</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr *ngIf="invoices.length === 0">
+          <td colspan="5" class="text-center py-5 text-muted">No invoices found</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Create Modal -->
+<div class="modal fade show" tabindex="-1"
+     [ngClass]="{'d-block': showCreateModal}"
+     [style.background]="'rgba(0,0,0,0.45)'"
+     *ngIf="showCreateModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 border-0 shadow">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold">New Invoice</h5>
+        <button type="button" class="btn-close" (click)="showCreateModal = false"></button>
+      </div>
+
+      <div class="modal-body pt-0">
+        <label class="form-label small fw-bold text-muted">Amount (GEL)</label>
+        <div class="input-group">
+          <span class="input-group-text">₾</span>
+          <input type="number" class="form-control" [(ngModel)]="amount" placeholder="0.00">
+        </div>
+
+        <div *ngIf="createdInvoiceId" class="alert alert-success mt-3 mb-0">
+          <div class="fw-bold mb-2">Invoice created ✅</div>
+          <button class="btn btn-dark btn-sm w-100" (click)="copyPayLink(createdInvoiceId)">
+            Copy public link
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-footer border-0">
+        <button class="btn btn-light" (click)="showCreateModal = false">Cancel</button>
+        <button class="btn btn-primary" (click)="createInvoice()" [disabled]="isLoading || !amount">
+          {{ isLoading ? 'Working...' : 'Create' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

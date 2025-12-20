@@ -6,15 +6,28 @@ import { HomeComponent } from './Components/home/home';
 import { authGuard } from './guards/auth.guard';
 import { PublicPaymentComponent } from './Components/public-payment/public-payment';
 
+import { ProfileComponent } from './Components/profile/profile';
+import { InvoicesComponent } from './Components/invoices/invoices';
+
 export const routes: Routes = [
-  { path: '', component: HomeComponent }, 
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'pay/:id', component: PublicPaymentComponent }, // საჯარო გვერდი
-  { 
-    path: 'dashboard', 
-    component: DashboardComponent, 
-    canActivate: [authGuard] // მხოლოდ ერთი დეკლარაცია!
+
+  // ✅ Public page (no auth)
+  { path: 'pay/:id', component: PublicPaymentComponent },
+
+  // ✅ Protected area shell
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [authGuard],
+    children: [
+      { path: '', pathMatch: 'full', redirectTo: 'profile' },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'invoices', component: InvoicesComponent }
+    ]
   },
-  { path: '**', redirectTo: '' } // უცნობი მისამართებისთვის
+
+  { path: '**', redirectTo: '' }
 ];

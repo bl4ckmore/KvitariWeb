@@ -7,21 +7,16 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent], 
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class AppComponent implements OnInit {
-  title = 'kvitari-web';
-
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // ყოველი ნავიგაციის დასრულებისას სქროლი ავა თავში
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      window.scrollTo(0, 0);
-    });
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => window.scrollTo(0, 0));
   }
 }

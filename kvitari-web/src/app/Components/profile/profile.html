@@ -1,0 +1,84 @@
+<div class="row g-3">
+
+  <div class="col-12 col-lg-7">
+    <div class="card shadow-sm border-0 rounded-4">
+      <div class="card-body p-4">
+        <div class="d-flex align-items-center gap-3">
+          <div class="icon-wrap bg-primary text-white">
+            <i class="bi bi-building"></i>
+          </div>
+
+          <div class="flex-grow-1">
+            <div class="h5 mb-1 fw-bold">My Profile</div>
+            <div class="text-muted small">Account details & billing settings</div>
+          </div>
+
+          <span class="badge text-bg-primary rounded-pill px-3 py-2">
+            {{ info.role || api.getRole() || 'User' }}
+          </span>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="row g-3">
+          <div class="col-12 col-md-6">
+            <div class="p-3 rounded-4 bg-light border">
+              <div class="text-muted small">Name</div>
+              <div class="fw-bold">{{ info.name || '—' }}</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="p-3 rounded-4 bg-light border">
+              <div class="text-muted small">Email</div>
+              <div class="fw-bold">{{ info.email || '—' }}</div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="p-3 rounded-4 bg-light border">
+              <div class="text-muted small mb-1">Billing status</div>
+              <div class="fw-bold">Active workspace</div>
+              <div class="text-muted small mt-1">
+                (შემდეგ ეტაპზე აქ დავამატებთ რეალურ endpoint-ს: /api/users/me ან /api/company/me)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2 mt-4">
+          <button class="btn btn-outline-primary" disabled>
+            <i class="bi bi-gear me-1"></i> Settings (soon)
+          </button>
+          <button class="btn btn-outline-secondary" disabled>
+            <i class="bi bi-shield-lock me-1"></i> Security (soon)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-5">
+    <div class="card shadow-sm border-0 rounded-4">
+      <div class="card-body p-4">
+        <div class="d-flex align-items-center justify-content-between">
+          <div>
+            <div class="fw-bold">Quick Actions</div>
+            <div class="text-muted small">Billing shortcuts</div>
+          </div>
+          <i class="bi bi-lightning-charge text-primary fs-4"></i>
+        </div>
+
+        <div class="d-grid gap-2 mt-3">
+          <a class="btn btn-primary" routerLink="/dashboard/invoices">
+            <i class="bi bi-receipt me-1"></i> Go to invoices
+          </a>
+          <button class="btn btn-outline-secondary" disabled>
+            <i class="bi bi-arrow-left-right me-1"></i> Transactions (soon)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

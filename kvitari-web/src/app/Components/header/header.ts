@@ -8,23 +8,12 @@ import { ApiService } from '../../../app/services/api';
   standalone: true,
   imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './header.html',
-  styleUrls: ['./header.css'] // აუცილებლად დავამატოთ ცალკე CSS ფაილი
+  styleUrls: ['./header.css']
 })
 export class HeaderComponent {
-  isMenuOpen = false; // მენიუს სტატუსი
-
   constructor(public api: ApiService) {}
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-
-  closeMenu() {
-    this.isMenuOpen = false;
-  }
 
   onLogout() {
     this.api.logout();
-    this.closeMenu();
   }
 }
