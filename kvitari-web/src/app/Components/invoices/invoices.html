@@ -7,9 +7,21 @@
         <div class="text-muted small">Create, share and track invoice payments</div>
       </div>
 
-      <button class="btn btn-primary" (click)="showCreateModal = true">
-        <i class="bi bi-plus-lg me-1"></i> New Invoice
-      </button>
+      <div class="d-flex gap-2">
+        <!-- Export All Button -->
+        <button class="btn btn-outline-success" 
+                (click)="exportAllInvoices()"
+                *ngIf="(invoices$ | async) && (invoices$ | async)!.length > 0"
+                title="Export all invoices">
+          <i class="bi bi-file-earmark-pdf me-1"></i>
+          <span class="d-none d-md-inline">Export All</span>
+        </button>
+        
+        <!-- New Invoice Button -->
+        <button class="btn btn-primary" (click)="showCreateModal = true">
+          <i class="bi bi-plus-lg me-1"></i> New Invoice
+        </button>
+      </div>
     </div>
 
     <div class="mt-3" *ngIf="invoices$ | async as invoices">
@@ -63,25 +75,42 @@
 
           <td class="text-end pe-3 pe-md-4">
             <div class="btn-group">
-              <button class="btn btn-outline-secondary btn-sm" (click)="openPublic(inv.id)" title="View">
+              <button class="btn btn-outline-secondary btn-sm" 
+                      (click)="openPublic(inv.id)" 
+                      title="View">
                 <i class="bi bi-eye"></i>
               </button>
 
-              <button class="btn btn-outline-secondary btn-sm" (click)="copyPayLink(inv.id)" title="Copy link">
+              <button class="btn btn-outline-secondary btn-sm" 
+                      (click)="copyPayLink(inv.id)" 
+                      title="Copy link">
                 <i class="bi bi-link-45deg"></i>
               </button>
 
-              <button *ngIf="!inv?.isPaid" class="btn btn-outline-primary btn-sm d-none d-md-inline-flex"
-                      (click)="pay('tbc', inv.id)" title="Pay TBC">
+              <!-- PDF Export Button -->
+              <button class="btn btn-outline-info btn-sm" 
+                      (click)="exportInvoicePdf(inv)" 
+                      title="Export PDF">
+                <i class="bi bi-file-pdf"></i>
+              </button>
+
+              <button *ngIf="!inv?.isPaid" 
+                      class="btn btn-outline-primary btn-sm d-none d-md-inline-flex"
+                      (click)="pay('tbc', inv.id)" 
+                      title="Pay TBC">
                 <i class="bi bi-credit-card"></i>
               </button>
 
-              <button *ngIf="!inv?.isPaid" class="btn btn-outline-primary btn-sm d-none d-md-inline-flex"
-                      (click)="pay('bog', inv.id)" title="Pay BOG">
+              <button *ngIf="!inv?.isPaid" 
+                      class="btn btn-outline-primary btn-sm d-none d-md-inline-flex"
+                      (click)="pay('bog', inv.id)" 
+                      title="Pay BOG">
                 <i class="bi bi-bank"></i>
               </button>
 
-              <button class="btn btn-outline-danger btn-sm" (click)="deleteInvoice(inv.id)" title="Delete">
+              <button class="btn btn-outline-danger btn-sm" 
+                      (click)="deleteInvoice(inv.id)" 
+                      title="Delete">
                 <i class="bi bi-trash"></i>
               </button>
             </div>
@@ -89,15 +118,22 @@
             <!-- Mobile pay buttons -->
             <div class="d-md-none mt-2" *ngIf="!inv?.isPaid">
               <div class="d-flex gap-2 justify-content-end">
-                <button class="btn btn-outline-primary btn-sm" (click)="pay('tbc', inv.id)">TBC</button>
-                <button class="btn btn-outline-primary btn-sm" (click)="pay('bog', inv.id)">BOG</button>
+                <button class="btn btn-outline-primary btn-sm" (click)="pay('tbc', inv.id)">
+                  <i class="bi bi-credit-card me-1"></i> TBC
+                </button>
+                <button class="btn btn-outline-primary btn-sm" (click)="pay('bog', inv.id)">
+                  <i class="bi bi-bank me-1"></i> BOG
+                </button>
               </div>
             </div>
           </td>
         </tr>
 
         <tr *ngIf="invoices.length === 0">
-          <td colspan="5" class="text-center py-5 text-muted">No invoices found</td>
+          <td colspan="5" class="text-center py-5 text-muted">
+            <i class="bi bi-inbox fs-1 d-block mb-2"></i>
+            No invoices found
+          </td>
         </tr>
       </tbody>
     </table>

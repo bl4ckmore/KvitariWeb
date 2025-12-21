@@ -1,1 +1,252 @@
-.modal.d-block { display: block; }
+
+
+/* Modal display */
+.modal.d-block { 
+  display: block;
+}
+
+/* Card styling */
+.card {
+  border: 1px solid #dee2e6 !important;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075) !important;
+}
+
+.card-header {
+  background-color: #fff !important;
+  border-bottom: 1px solid #dee2e6 !important;
+  
+  .h5 {
+    font-weight: 600 !important;
+    color: #212529 !important;
+  }
+}
+
+/* Badges */
+.badge {
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  padding: 0.35rem 0.65rem !important;
+}
+
+/* Table */
+.table {
+  font-size: 0.875rem;
+  
+  thead th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: #6c757d;
+    border-bottom: 2px solid #dee2e6 !important;
+    padding: 0.75rem;
+    background-color: #f8f9fa;
+  }
+  
+  tbody {
+    tr {
+      border-bottom: 1px solid #dee2e6;
+      
+      &:hover {
+        background-color: #f8f9fa;
+      }
+    }
+    
+    td {
+      padding: 0.75rem;
+      vertical-align: middle;
+    }
+  }
+  
+  .text-primary {
+    color: #0d6efd !important;
+    font-weight: 600;
+  }
+}
+
+/* Button groups */
+.btn-group {
+  gap: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  
+  .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+}
+
+/* Button colors */
+.btn-outline-secondary {
+  border-color: #6c757d !important;
+  color: #6c757d !important;
+  
+  &:hover {
+    background-color: #6c757d !important;
+    color: white !important;
+  }
+}
+
+.btn-outline-primary {
+  border-color: #0d6efd !important;
+  color: #0d6efd !important;
+  
+  &:hover {
+    background-color: #0d6efd !important;
+    color: white !important;
+  }
+}
+
+.btn-outline-info {
+  border-color: #0dcaf0 !important;
+  color: #0dcaf0 !important;
+  
+  &:hover {
+    background-color: #0dcaf0 !important;
+    color: white !important;
+  }
+}
+
+.btn-outline-danger {
+  border-color: #dc3545 !important;
+  color: #dc3545 !important;
+  
+  &:hover {
+    background-color: #dc3545 !important;
+    color: white !important;
+  }
+}
+
+.btn-outline-success {
+  border-color: #198754 !important;
+  color: #198754 !important;
+  
+  &:hover {
+    background-color: #198754 !important;
+    color: white !important;
+  }
+}
+
+/* Modal */
+.modal-content {
+  border: 1px solid rgba(0,0,0,0.2) !important;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
+}
+
+.modal-header {
+  background-color: #fff;
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.modal-title {
+  font-weight: 600 !important;
+  color: #212529 !important;
+}
+
+.modal-footer {
+  background-color: #fff;
+  border-top: 1px solid #dee2e6 !important;
+}
+
+/* Form controls */
+.form-label {
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.input-group-text {
+  font-weight: 600;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+}
+
+.form-control {
+  border: 1px solid #ced4da !important;
+  font-size: 1rem;
+  
+  &:focus {
+    border-color: #86b7fe !important;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,0.25) !important;
+  }
+  
+  &:disabled {
+    background-color: #e9ecef;
+    opacity: 0.6;
+  }
+}
+
+/* Alert */
+.alert-success {
+  background-color: #d1e7dd !important;
+  border-color: #badbcc !important;
+  color: #0f5132 !important;
+}
+
+/* Primary button */
+.btn-primary {
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+  font-weight: 500 !important;
+  
+  &:hover:not(:disabled) {
+    background-color: #0b5ed7 !important;
+    border-color: #0a58ca !important;
+  }
+  
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}
+
+.btn-light {
+  background-color: #f8f9fa !important;
+  border-color: #f8f9fa !important;
+  color: #212529 !important;
+  
+  &:hover:not(:disabled) {
+    background-color: #e9ecef !important;
+    border-color: #dee2e6 !important;
+  }
+}
+
+.btn-dark {
+  background-color: #212529 !important;
+  border-color: #212529 !important;
+  
+  &:hover {
+    background-color: #1c1f23 !important;
+    border-color: #1a1e21 !important;
+  }
+}
+
+/* Spinner */
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.15em;
+}
+
+/* Empty state */
+.bi-inbox {
+  opacity: 0.3;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .table thead th,
+  .table tbody td {
+    padding: 0.5rem;
+    font-size: 0.8125rem;
+  }
+  
+  .btn-group .btn-sm {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.8125rem;
+  }
+  
+  .card-header {
+    padding: 1rem !important;
+  }
+}

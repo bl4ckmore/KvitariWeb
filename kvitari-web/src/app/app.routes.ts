@@ -14,8 +14,9 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
-  // ✅ Public page (no auth)
+  // ✅ Public payment pages (no auth required)
   { path: 'pay/:id', component: PublicPaymentComponent },
+  { path: 'public-payment/:id', component: PublicPaymentComponent }, // Alternative route
 
   // ✅ Protected area shell
   {

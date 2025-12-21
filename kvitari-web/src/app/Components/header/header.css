@@ -48,10 +48,122 @@
   color: #fff;
 }
 
-@media (max-width: 576px) {
-  .nav-link-custom,
-  .btn-logout-custom {
-    padding: 10px;
-    font-size: 1.05rem;
+/* Mobile Burger Button */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  color: #0d6efd;
+  padding: 8px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Mobile Menu Backdrop */
+.mobile-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3999;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(85vw, 320px);
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 4000;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-menu-header {
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-close-menu {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  color: #6c757d;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.mobile-menu-body {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  color: #212529;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mobile-menu-item:hover {
+  background: #f8f9fa;
+}
+
+.mobile-menu-item.text-danger {
+  color: #dc3545;
+}
+
+.mobile-menu-item.text-danger:hover {
+  background: rgba(220, 53, 69, 0.08);
+}
+
+.mobile-menu-item i {
+  font-size: 1.25rem;
+  width: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-menu-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 12px 0;
+}
+
+/* Hide mobile menu on desktop */
+@media (min-width: 992px) {
+  .mobile-menu-backdrop,
+  .mobile-menu {
+    display: none;
   }
 }

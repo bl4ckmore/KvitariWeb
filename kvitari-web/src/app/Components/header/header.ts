@@ -11,9 +11,26 @@ import { ApiService } from '../../../app/services/api';
   styleUrls: ['./header.css']
 })
 export class HeaderComponent {
+  mobileMenuOpen = false;
+
   constructor(public api: ApiService) {}
 
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+    if (this.mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
+  closeMobileMenu() {
+    this.mobileMenuOpen = false;
+    document.body.style.overflow = '';
+  }
+
   onLogout() {
+    this.closeMobileMenu();
     this.api.logout();
   }
 }

@@ -1,19 +1,16 @@
-<nav class="navbar navbar-expand-lg fixed-top shadow-sm px-3">
+<!-- Desktop Header -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm px-3 d-none d-lg-flex">
   <div class="container-fluid">
     <a class="navbar-brand fw-bold text-primary fs-4" routerLink="/">
       Kvitari.ge
     </a>
 
     <div class="d-flex align-items-center gap-2">
+      <!-- Show Dashboard button when logged in -->
       <ng-container *ngIf="api.isLoggedIn()">
-        <a routerLink="/dashboard/profile" routerLinkActive="active" class="nav-link-custom">
-          <i class="bi bi-person-badge"></i>
-          <span class="d-none d-sm-inline">My Profile</span>
-        </a>
-
-        <a routerLink="/dashboard/invoices" routerLinkActive="active" class="nav-link-custom">
-          <i class="bi bi-receipt"></i>
-          <span class="d-none d-sm-inline">Invoices</span>
+        <a routerLink="/dashboard" class="nav-link-custom">
+          <i class="bi bi-speedometer2"></i>
+          <span class="d-none d-sm-inline">Dashboard</span>
         </a>
 
         <button (click)="onLogout()" class="btn-logout-custom">
@@ -22,6 +19,7 @@
         </button>
       </ng-container>
 
+      <!-- Show Login button when NOT logged in -->
       <ng-container *ngIf="!api.isLoggedIn()">
         <a routerLink="/login" class="btn btn-outline-primary rounded-pill px-4">Login</a>
       </ng-container>
@@ -29,4 +27,63 @@
   </div>
 </nav>
 
+<!-- Mobile Header -->
+<nav class="navbar navbar-light bg-white fixed-top shadow-sm px-3 d-lg-none">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-primary fs-4" routerLink="/">
+      Kvitari.ge
+    </a>
+
+    <button class="navbar-toggler" type="button" (click)="toggleMobileMenu()">
+      <i class="bi bi-list fs-3"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Header spacer for both mobile and desktop -->
 <div class="header-spacer"></div>
+
+<!-- Mobile Menu Backdrop -->
+<div class="mobile-menu-backdrop" *ngIf="mobileMenuOpen" (click)="closeMobileMenu()"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" [class.open]="mobileMenuOpen">
+  <div class="mobile-menu-header">
+    <span class="fw-bold fs-5">Menu</span>
+    <button class="btn-close-menu" (click)="closeMobileMenu()">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+  
+  <div class="mobile-menu-body">
+    <a routerLink="/" class="mobile-menu-item" (click)="closeMobileMenu()">
+      <i class="bi bi-house"></i>
+      <span>Home</span>
+    </a>
+
+    <ng-container *ngIf="api.isLoggedIn()">
+      <a routerLink="/dashboard" class="mobile-menu-item" (click)="closeMobileMenu()">
+        <i class="bi bi-speedometer2"></i>
+        <span>Dashboard</span>
+      </a>
+
+      <div class="mobile-menu-divider"></div>
+
+      <button (click)="onLogout()" class="mobile-menu-item text-danger">
+        <i class="bi bi-box-arrow-right"></i>
+        <span>Logout</span>
+      </button>
+    </ng-container>
+
+    <ng-container *ngIf="!api.isLoggedIn()">
+      <a routerLink="/login" class="mobile-menu-item" (click)="closeMobileMenu()">
+        <i class="bi bi-box-arrow-in-right"></i>
+        <span>Login</span>
+      </a>
+      <a routerLink="/register" class="mobile-menu-item" (click)="closeMobileMenu()">
+        <i class="bi bi-person-plus"></i>
+        <span>Register</span>
+      </a>
+    </ng-container>
+  </div>
+</div>

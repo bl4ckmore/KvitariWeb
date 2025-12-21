@@ -1,4 +1,6 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+// src/app/Components/dashboard/dashboard.component.ts
+
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ApiService } from '../../services/api';
@@ -8,39 +10,38 @@ import { ApiService } from '../../services/api';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css'
+  styleUrls: ['./dashboard.css']
 })
-export class DashboardComponent implements OnInit, OnDestroy {
+export class DashboardComponent implements OnInit {
+  
   mobileMenuOpen = false;
   role: string | null = null;
 
   constructor(public api: ApiService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    // Get user role from token
     this.role = this.api.getRole();
+    
+    // Load user data if needed
+    const userInfo = this.api.getUserFromToken();
+    console.log('Dashboard loaded for:', userInfo);
   }
 
-  @HostListener('document:keydown.escape')
-  onEsc() {
-    if (this.mobileMenuOpen) this.closeMobileMenu();
-  }
-
-  openMobileMenu() {
+  openMobileMenu(): void {
     this.mobileMenuOpen = true;
-    document.body.classList.add('no-scroll');
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = 'hidden';
   }
 
-  closeMobileMenu() {
+  closeMobileMenu(): void {
     this.mobileMenuOpen = false;
-    document.body.classList.remove('no-scroll');
+    // Restore body scroll
+    document.body.style.overflow = '';
   }
 
-  logout() {
+  logout(): void {
     this.closeMobileMenu();
     this.api.logout();
-  }
-
-  ngOnDestroy() {
-    document.body.classList.remove('no-scroll');
   }
 }
