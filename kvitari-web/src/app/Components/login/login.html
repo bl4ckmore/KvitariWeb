@@ -1,34 +1,47 @@
-<div class="container py-5 mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-5">
-      <div class="card auth-card p-4 p-lg-5">
-        <div class="text-center mb-5">
-          <h2 class="fw-bold">შესვლა</h2>
-          <p class="text-muted small">მართეთ თქვენი ინვოისები ერთ სივრცეში</p>
-        </div>
-
-        <form (ngSubmit)="onLogin()">
-          <div class="mb-4">
-            <label class="form-label fw-bold small">ელ-ფოსტა</label>
-            <input type="email" [(ngModel)]="email" name="email" class="form-control form-control-lg" placeholder="example@mail.com">
-          </div>
-
-          <div class="mb-4">
-            <label class="form-label fw-bold small">პაროლი</label>
-            <input type="password" [(ngModel)]="password" name="password" class="form-control form-control-lg" placeholder="••••••••">
-          </div>
-
-          <div *ngIf="errorMsg" class="alert alert-danger border-0 small py-2 mb-4">
-            {{ errorMsg }}
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-auth w-100 mb-4 shadow-sm">ავტორიზაცია</button>
-
-          <p class="text-center text-muted small mb-0">
-            არ გაქვთ ანგარიში? <a routerLink="/register" class="text-primary fw-bold text-decoration-none">დარეგისტრირდით</a>
-          </p>
-        </form>
-      </div>
+<div class="auth-container">
+  <div class="auth-card p-4 p-lg-5">
+    <div class="auth-header">
+      <h2 class="auth-title">შესვლა</h2>
+      <p class="auth-subtitle">მართეთ თქვენი ინვოისები ერთ სივრცეში</p>
     </div>
+
+    <form (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <label class="form-label">ელ-ფოსტა</label>
+        <input 
+          type="email" 
+          [(ngModel)]="email" 
+          name="email" 
+          class="form-control-auth" 
+          placeholder="example@mail.com"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">პაროლი</label>
+        <input 
+          type="password" 
+          [(ngModel)]="password" 
+          name="password" 
+          class="form-control-auth" 
+          placeholder="••••••••"
+          required>
+      </div>
+
+      <div *ngIf="errorMsg" class="alert-error">
+        {{ errorMsg }}
+      </div>
+
+      <button type="submit" class="btn-auth-submit">
+        ავტორიზაცია
+      </button>
+
+      <div class="auth-footer">
+        <p class="auth-footer-text">
+          არ გაქვთ ანგარიში? 
+          <a routerLink="/register" class="auth-link">დარეგისტრირდით</a>
+        </p>
+      </div>
+    </form>
   </div>
 </div>

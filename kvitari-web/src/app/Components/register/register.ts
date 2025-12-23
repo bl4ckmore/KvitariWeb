@@ -7,11 +7,11 @@ import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink], // RouterLink გვჭირდება "Login"-ზე გადასასვლელად
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './register.html',
+  styleUrls: ['./register.css']
 })
 export class RegisterComponent {
-  // ობიექტი, რომელიც ზუსტად ემთხვევა C#-ის RegisterDto-ს
   registerData = {
     companyName: '',
     identificationNumber: '',
@@ -24,7 +24,6 @@ export class RegisterComponent {
   constructor(private api: ApiService, private router: Router) {}
 
   onRegister() {
-    // მარტივი ვალიდაცია
     if (!this.registerData.email || !this.registerData.password || !this.registerData.companyName) {
       this.errorMsg = 'გთხოვთ შეავსოთ ყველა ველი!';
       return;
@@ -33,11 +32,10 @@ export class RegisterComponent {
     this.api.register(this.registerData).subscribe({
       next: (res: any) => {
         alert('რეგისტრაცია წარმატებით დასრულდა! ახლა შეგიძლიათ შეხვიდეთ.');
-        this.router.navigate(['/login']); // გადავამისამართოთ შესვლაზე
+        this.router.navigate(['/login']);
       },
       error: (err) => {
         console.error(err);
-        // ვცდილობთ წავიკითხოთ ბექენდის ერორი (მაგ: "User already exists")
         this.errorMsg = err.error?.message || err.error || 'რეგისტრაცია ვერ მოხერხდა.';
       },
     });

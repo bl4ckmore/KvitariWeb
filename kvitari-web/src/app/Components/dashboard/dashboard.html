@@ -1,81 +1,25 @@
+<app-header></app-header>
+
 <div class="layout">
-
-  <!-- Sidebar content template -->
-  <ng-template #SideContent>
-    <!-- Navigation -->
-    <nav class="nav flex-column gap-1">
-      <a class="nav-link side-link"
-         routerLink="/"
-         (click)="closeMobileMenu()">
-        <i class="bi bi-house"></i>
-        <span>Back to Home</span>
-      </a>
-
-      <div class="divider"></div>
-
-      <a class="nav-link side-link"
-         routerLink="/dashboard/profile"
-         routerLinkActive="active"
-         [routerLinkActiveOptions]="{ exact: true }"
-         (click)="closeMobileMenu()">
-        <i class="bi bi-person-badge"></i>
-        <span>My Profile</span>
-      </a>
-
-      <a class="nav-link side-link"
-         routerLink="/dashboard/invoices"
-         routerLinkActive="active"
-         (click)="closeMobileMenu()">
-        <i class="bi bi-receipt"></i>
-        <span>Invoices</span>
-      </a>
-
-      <div class="divider"></div>
-
-      <a class="nav-link side-link logout" href="javascript:void(0)" (click)="logout()">
-        <i class="bi bi-box-arrow-left"></i>
-        <span>Logout</span>
-      </a>
-    </nav>
-  </ng-template>
-
-  <!-- Desktop sidebar -->
   <aside class="sidebar d-none d-lg-flex">
     <div class="sidebar-inner">
-      <ng-container *ngTemplateOutlet="SideContent"></ng-container>
+      <div class="sidebar-label">DASHBOARD</div>
+      <nav class="nav flex-column gap-1">
+        <a class="side-link" routerLink="/dashboard/profile" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <i class="bi bi-person-badge"></i>
+          <span>My Profile</span>
+        </a>
+        <a class="side-link" routerLink="/dashboard/invoices" routerLinkActive="active">
+          <i class="bi bi-receipt"></i>
+          <span>Invoices</span>
+        </a>
+      </nav>
     </div>
   </aside>
 
-  <!-- Main -->
   <div class="main">
-    <!-- Mobile topbar with menu button -->
-    <div class="mobile-topbar d-lg-none">
-      <button class="btn btn-outline-primary" (click)="openMobileMenu()">
-        <i class="bi bi-list"></i> Menu
-      </button>
-      <div class="brand-title text-primary">Kvitari.ge</div>
-      <div style="width: 80px;"></div>
-    </div>
-
-    <!-- Content -->
     <main class="content">
       <router-outlet></router-outlet>
     </main>
   </div>
-
-  <!-- Mobile offcanvas -->
-  <div class="backdrop" *ngIf="mobileMenuOpen" (click)="closeMobileMenu()"></div>
-  <aside class="offcanvasx" [class.open]="mobileMenuOpen">
-    <div class="off-head">
-      <button class="btn btn-outline-light" (click)="closeMobileMenu()">
-        <i class="bi bi-x-lg"></i>
-      </button>
-      <div class="text-white fw-bold">Menu</div>
-      <div style="width:42px;"></div>
-    </div>
-    <div class="off-body">
-      <ng-container *ngTemplateOutlet="SideContent"></ng-container>
-    </div>
-  </aside>
-
 </div>

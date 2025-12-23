@@ -1,18 +1,20 @@
 /* Payment Wrapper */
 .payment-wrapper {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #f8f9fa;
 }
 
 /* Card Styling */
 .card {
-  animation: slideUp 0.5s ease;
+  animation: fadeInUp 0.5s ease;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 2rem !important;
 }
 
-@keyframes slideUp {
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -20,46 +22,77 @@
   }
 }
 
+/* Brand Title */
+.text-primary {
+  color: #1a1a2e !important;
+}
+
 /* Loading Spinner */
 .spinner-border {
   width: 3rem;
   height: 3rem;
   border-width: 0.3em;
+  color: #1a1a2e !important;
 }
 
 /* Display Heading */
 .display-4 {
   font-size: 3rem;
   font-weight: 800;
-  color: #0d6efd;
+  color: #1a1a2e;
+}
+
+/* Info Box */
+.bg-light {
+  background: #f8f9fa !important;
+  border-radius: 1.5rem !important;
 }
 
 /* Button Styling */
 .btn {
   transition: all 0.3s ease;
+  font-weight: 600;
+  border-radius: 1rem !important;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn-outline-dark {
   border-width: 2px;
+  color: #1a1a2e;
+  border-color: #1a1a2e;
 }
 
 .btn-outline-dark:hover {
-  background-color: #212529;
-  border-color: #212529;
+  background-color: #1a1a2e;
+  border-color: #1a1a2e;
+  color: white;
 }
 
 .btn-outline-primary {
   border-width: 2px;
+  color: #2d6a4f;
+  border-color: #2d6a4f;
 }
 
 .btn-outline-primary:hover {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: #2d6a4f;
+  border-color: #2d6a4f;
+  color: white;
+}
+
+/* Bank Icons */
+.btn img {
+  filter: grayscale(0);
+  transition: filter 0.2s ease;
+}
+
+/* Error Icon */
+.text-danger {
+  color: #c00 !important;
 }
 
 /* Responsive */

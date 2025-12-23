@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // ეს საჭიროა *ngIf-ისთვის
-import { FormsModule } from '@angular/forms';   // ეს საჭიროა input-ებისთვის
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink], // <--- არ დაგავიწყდეს იმპორტები!
-  templateUrl: './login.html'
+  imports: [CommonModule, FormsModule, RouterLink],
+  templateUrl: './login.html',
+  styleUrls: ['./login.css']
 })
 export class LoginComponent {
   email = '';
@@ -22,10 +23,8 @@ export class LoginComponent {
       next: (res: any) => {
         this.api.saveToken(res.token);
         const role = this.api.getRole();
-        alert(`Login Success! Role: ${role}`); // დროებით, რომ გავიგოთ მუშაობს თუ არა
-        
-        // აქ მერე გადავამისამართებთ Dashboard-ზე
-         this.router.navigate(['/dashboard']);
+        alert(`Login Success! Role: ${role}`);
+        this.router.navigate(['/dashboard']);
       },
       error: (err) => {
         console.error(err);

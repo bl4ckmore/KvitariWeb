@@ -3,7 +3,7 @@
     <div class="row g-4">
       
       <div class="col-lg-4 col-md-6">
-        <h4 class="fw-bold text-primary mb-3">Kvitari.ge</h4>
+        <h4 class="fw-bold mb-3">Kvitari.ge</h4>
         <p class="text-white-50 small">
           თანამედროვე საგადახდო სისტემა ქართული ბიზნესისთვის. 
           მარტივი ინტეგრაცია TBC და BOG ბანკებთან.
@@ -19,7 +19,7 @@
             <li class="mb-2"><a routerLink="/register" class="text-reset text-decoration-none">რეგისტრაცია</a></li>
           </ng-container>
           <li class="mb-2" *ngIf="api.isLoggedIn()">
-            <a routerLink="/dashboard" class="text-primary text-decoration-none fw-bold">Dashboard</a>
+            <a routerLink="/dashboard" class="text-decoration-none" style="color: #00d4ff; font-weight: 600;">Dashboard</a>
           </li>
         </ul>
       </div>
@@ -27,16 +27,24 @@
       <div class="col-lg-3 col-md-3 col-6">
         <h6 class="fw-bold mb-3">კონტაქტი</h6>
         <ul class="list-unstyled text-white-50 small">
-          <li class="mb-2">kvitari@outlook.com</li>
-          <li class="mb-2">+995 555 18 16 05</li>
+          <li class="mb-2">
+            <i class="bi bi-envelope me-2"></i>kvitari@outlook.com
+          </li>
+          <li class="mb-2">
+            <i class="bi bi-telephone me-2"></i>+995 555 18 16 05
+          </li>
         </ul>
       </div>
 
       <div class="col-lg-3">
         <h6 class="fw-bold mb-3">სოციალური</h6>
-        <div class="d-flex gap-2">
-          <a href="#" class="btn btn-outline-light btn-sm px-3">Facebook</a>
-          <a href="#" class="btn btn-outline-light btn-sm px-3">LinkedIn</a>
+        <div class="d-flex gap-2 flex-wrap">
+          <a href="#" class="btn btn-outline-light">
+            <i class="bi bi-facebook me-1"></i>Facebook
+          </a>
+          <a href="#" class="btn btn-outline-light">
+            <i class="bi bi-linkedin me-1"></i>LinkedIn
+          </a>
         </div>
       </div>
 

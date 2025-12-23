@@ -7,7 +7,8 @@ import { ApiService } from '../../services/api';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, RouterLink],
-  templateUrl: './home.html'
+  templateUrl: './home.html',
+  styleUrls: ['./home.css']
 })
 export class HomeComponent {
   constructor(public api: ApiService) {}

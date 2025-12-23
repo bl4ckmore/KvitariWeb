@@ -1,63 +1,198 @@
 <main>
-  <section class="py-5 mt-4">
-    <div class="container py-5">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-6">
-          <h1 class="display-3 fw-bold mb-4" style="color: var(--secondary)">
-            თქვენი ბიზნესის <br><span class="text-primary">ფინანსური ჰაბი</span>
+        <div class="col-lg-6 hero-content">
+          <h1 class="hero-title">
+            თქვენი ბიზნესის <br><span class="highlight">ფინანსური ჰაბი</span>
           </h1>
-          <p class="lead text-muted mb-5">
+          <p class="hero-description">
             შექმენით ინვოისები წამებში და მიიღეთ გადახდები საქართველოში ყველაზე პოპულარული ბანკების საშუალებით.
           </p>
           
-          <div class="d-flex gap-3">
+          <div class="hero-buttons">
             <ng-container *ngIf="!api.isLoggedIn()">
-              <a routerLink="/register" class="btn btn-primary btn-auth px-5 shadow">დაიწყე უფასოდ</a>
-              <a routerLink="/login" class="btn btn-outline-dark btn-auth px-5">ავტორიზაცია</a>
+              <a routerLink="/register" class="btn-hero btn-hero-light">
+                დაიწყე უფასოდ
+              </a>
+              <a routerLink="/login" class="btn-hero btn-hero-outline">
+                ავტორიზაცია
+              </a>
             </ng-container>
             
-            <a *ngIf="api.isLoggedIn()" routerLink="/dashboard" class="btn btn-primary btn-auth px-5 shadow">ჩემი Dashboard</a>
+            <a *ngIf="api.isLoggedIn()" routerLink="/dashboard" class="btn-hero btn-hero-light">
+              ჩემი Dashboard
+            </a>
           </div>
         </div>
         
-        <div class="col-lg-6 d-none d-lg-block">
-          <img src="https://happay.com/blog/wp-content/uploads/sites/12/2023/05/billing-process.webp" class="img-fluid" alt="Billing">
+        <div class="col-lg-6 d-none d-lg-block text-center mt-4 mt-lg-0">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYg4GFoEG7QfbV07-lqWP_DZ4YHBeGNHDmQg&s" class="img-fluid hero-image" alt="Billing">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-5 bg-white border-top">
-    <div class="container py-5">
-      <div class="row g-4 text-center">
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row">
         <div class="col-md-4">
-          <div class="p-4">
-            <div class="bg-primary-subtle text-primary rounded-circle d-inline-flex p-3 mb-3">
-              <i class="bi bi-lightning-fill fs-3"></i>
-            </div>
-            <h5 class="fw-bold">სწრაფი ბილინგი</h5>
-            <p class="text-muted small">ინვოისის შექმნა და გაგზავნა სულ რაღაც 3 კლიკში.</p>
+          <div class="stat-card">
+            <div class="stat-number">1000+</div>
+            <div class="stat-label">აქტიური მომხმარებლები</div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="p-4">
-            <div class="bg-success-subtle text-success rounded-circle d-inline-flex p-3 mb-3">
-              <i class="bi bi-bank fs-3"></i>
-            </div>
-            <h5 class="fw-bold">ბანკებთან ინტეგრაცია</h5>
-            <p class="text-muted small">TBC და BOG ბიზნეს გადახდების სრული მხარდაჭერა.</p>
+          <div class="stat-card">
+            <div class="stat-number">50K+</div>
+            <div class="stat-label">შექმნილი ინვოისები</div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="p-4">
-            <div class="bg-info-subtle text-info rounded-circle d-inline-flex p-3 mb-3">
-              <i class="bi bi-shield-lock fs-3"></i>
-            </div>
-            <h5 class="fw-bold">უსაფრთხოება</h5>
-            <p class="text-muted small">თქვენი მონაცემები დაცულია საბანკო დონის უსაფრთხოებით.</p>
+          <div class="stat-card">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">სისტემის სტაბილურობა</div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>ძირითადი ფუნქციები</h2>
+        <p>ყველაფერი რაც გჭირდებათ თქვენი ბიზნესის მართვისთვის</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon icon-primary">
+              <i class="bi bi-lightning-fill"></i>
+            </div>
+            <h5 class="feature-title">სწრაფი ბილინგი</h5>
+            <p class="feature-description">ინვოისის შექმნა და გაგზავნა სულ რაღაც 3 კლიკში.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon icon-success">
+              <i class="bi bi-bank"></i>
+            </div>
+            <h5 class="feature-title">ბანკებთან ინტეგრაცია</h5>
+            <p class="feature-description">TBC და BOG ბიზნეს გადახდების სრული მხარდაჭერა.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon icon-info">
+              <i class="bi bi-shield-lock"></i>
+            </div>
+            <h5 class="feature-title">უსაფრთხოება</h5>
+            <p class="feature-description">თქვენი მონაცემები დაცულია საბანკო დონის უსაფრთხოებით.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-3">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon icon-success">
+              <i class="bi bi-file-earmark-text"></i>
+            </div>
+            <h5 class="feature-title">PDF ექსპორტი</h5>
+            <p class="feature-description">გადმოწერეთ და გააზიარეთ ინვოისები PDF ფორმატში.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon icon-primary">
+              <i class="bi bi-graph-up"></i>
+            </div>
+            <h5 class="feature-title">ანალიტიკა</h5>
+            <p class="feature-description">თვალი ადევნეთ თქვენი ბიზნესის ფინანსურ მაჩვენებლებს.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="feature-card">
+            <div class="feature-icon icon-info">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h5 class="feature-title">მობილური აპლიკაცია</h5>
+            <p class="feature-description">მართეთ ინვოისები ნებისმიერი მოწყობილობიდან.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>როგორ მუშაობს</h2>
+        <p>მარტივი ნაბიჯები დასაწყებად</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h5 class="step-title">რეგისტრაცია</h5>
+            <p class="step-description">შექმენით უფასო ანგარიში 2 წუთში</p>
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h5 class="step-title">კომპანიის დამატება</h5>
+            <p class="step-description">შეიყვანეთ თქვენი ბიზნესის მონაცემები</p>
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h5 class="step-title">ინვოისის შექმნა</h5>
+            <p class="step-description">შექმენით და გაგზავნეთ ინვოისი კლიენტს</p>
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h5 class="step-title">გადახდა</h5>
+            <p class="step-description">მიიღეთ გადახდა TBC ან BOG-ის საშუალებით</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">მზად ხართ დასაწყებად?</h2>
+      <p class="cta-description">შექმენით უფასო ანგარიში და დაიწყეთ ინვოისების მართვა დღესვე</p>
+      
+      <ng-container *ngIf="!api.isLoggedIn()">
+        <a routerLink="/register" class="btn-cta">
+          დაიწყე უფასოდ
+        </a>
+      </ng-container>
+      
+      <a *ngIf="api.isLoggedIn()" routerLink="/dashboard" class="btn-cta">
+        ჩემი Dashboard
+      </a>
     </div>
   </section>
 </main>
