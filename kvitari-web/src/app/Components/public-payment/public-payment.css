@@ -1,7 +1,7 @@
 /* Payment Wrapper - Professional Background */
 .payment-wrapper {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  background: #fafbfc;
   position: relative;
 }
 
@@ -12,8 +12,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(13, 110, 253, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(10, 88, 202, 0.05) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -38,26 +38,26 @@
   }
 }
 
-/* Brand Title - Bootstrap Blue */
+/* Brand Title - Purple */
 .text-primary {
-  color: #0d6efd !important;
+  color: #667eea !important;
   font-weight: 800 !important;
   letter-spacing: -0.02em;
 }
 
-/* Loading Spinner - Bootstrap Blue */
+/* Loading Spinner - Purple */
 .spinner-border {
   width: 3.5rem;
   height: 3.5rem;
   border-width: 0.35em;
-  color: #0d6efd !important;
+  color: #667eea !important;
 }
 
 /* Display Heading - Bold Typography */
 .display-4 {
   font-size: 3.5rem;
   font-weight: 800;
-  color: #0d6efd !important;
+  color: #667eea !important;
   letter-spacing: -0.03em;
 }
 
@@ -70,7 +70,7 @@
 
 /* Button Base Styling - Professional */
 .btn {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 700;
   border-radius: 0.625rem !important;
   padding: 1rem 1.5rem;
@@ -95,24 +95,24 @@
 }
 
 .btn-outline-dark:hover {
-  background: #212529 !important;
-  border-color: #212529 !important;
+  background: #495057 !important;
+  border-color: #495057 !important;
   color: white !important;
-  box-shadow: 0 8px 16px rgba(33, 37, 41, 0.3);
+  box-shadow: 0 8px 16px rgba(73, 80, 87, 0.3);
 }
 
-/* TBC Bank Button - Bootstrap Blue */
+/* TBC Bank Button - Purple */
 .btn-outline-primary {
-  color: #0d6efd !important;
-  border-color: #0d6efd !important;
+  color: #667eea !important;
+  border-color: #667eea !important;
   background: white !important;
 }
 
 .btn-outline-primary:hover {
-  background: #0d6efd !important;
-  border-color: #0d6efd !important;
+  background: #7c8ff0 !important;
+  border-color: #7c8ff0 !important;
   color: white !important;
-  box-shadow: 0 8px 16px rgba(13, 110, 253, 0.3);
+  box-shadow: 0 8px 16px rgba(124, 143, 240, 0.3);
 }
 
 /* Bank Icons - Enhanced Styling */

@@ -77,8 +77,8 @@
   </div>
 </div>
 
-<!-- Toast Notification - Outside container -->
-<div *ngIf="showToast" class="toast-notification" [ngClass]="toastType" style="display: block !important;">
+<!-- Toast Notification -->
+<div *ngIf="showToast" class="toast-notification" [ngClass]="toastType">
   <div class="toast-icon">
     <span *ngIf="toastType === 'success'">✓</span>
     <span *ngIf="toastType === 'error'">✕</span>
@@ -91,14 +91,3 @@
     ✕
   </button>
 </div>
-
-<style>
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-.spin {
-  animation: spin 1s linear infinite;
-  display: inline-block;
-}
-</style>

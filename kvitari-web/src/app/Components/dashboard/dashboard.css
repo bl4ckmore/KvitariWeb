@@ -67,19 +67,19 @@
   transform: translateX(-50%);
   width: 0;
   height: 3px;
-  background: #2563eb;
+  background: #667eea;
   border-radius: 2px 2px 0 0;
   transition: width 0.2s ease;
 }
 
 .side-link:hover {
-  background: rgba(37, 99, 235, 0.06);
-  color: #1e40af;
+  background: rgba(102, 126, 234, 0.06);
+  color: #667eea;
 }
 
 .side-link.active {
-  background: rgba(37, 99, 235, 0.1);
-  color: #1e40af;
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
   font-weight: 600;
 }
 

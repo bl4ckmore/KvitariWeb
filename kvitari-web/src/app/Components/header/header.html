@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm px-3 d-none d-lg-flex">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold text-primary fs-4" routerLink="/">Kvitari.ge</a>
+    <a class="navbar-brand fw-bold fs-4" routerLink="/">Kvitari.ge</a>
 
     <div class="d-flex align-items-center gap-2">
       <ng-container *ngIf="api.isLoggedIn()">
@@ -10,12 +10,15 @@
         </a>
         <button (click)="onLogout()" class="btn-logout-custom">
           <i class="bi bi-box-arrow-right"></i>
-          <span>Logout</span>
+          <span>გასვლა</span>
         </button>
       </ng-container>
 
       <ng-container *ngIf="!api.isLoggedIn()">
-        <a routerLink="/login" class="btn btn-outline-primary">Login</a>
+        <a routerLink="/login" class="btn btn-outline-primary">
+          <i class="bi bi-box-arrow-in-right"></i>
+          ავტორიზაცია
+        </a>
       </ng-container>
     </div>
   </div>
@@ -23,7 +26,7 @@
 
 <nav class="navbar navbar-light bg-white fixed-top shadow-sm px-3 d-lg-none">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold text-primary fs-4" routerLink="/">Kvitari.ge</a>
+    <a class="navbar-brand fw-bold fs-4" routerLink="/">Kvitari.ge</a>
     <button class="navbar-toggler" type="button" (click)="toggleMobileMenu()">
       <i class="bi bi-list fs-3"></i>
     </button>
@@ -35,7 +38,7 @@
 <div class="mobile-menu-backdrop" *ngIf="mobileMenuOpen" (click)="closeMobileMenu()"></div>
 <div class="mobile-menu" [class.open]="mobileMenuOpen">
   <div class="mobile-menu-header">
-    <span class="fw-bold fs-5">Menu</span>
+    <span class="fw-bold fs-5">მენიუ</span>
     <button class="btn-close-menu" (click)="closeMobileMenu()">
       <i class="bi bi-x-lg"></i>
     </button>
@@ -43,27 +46,47 @@
   
   <div class="mobile-menu-body">
     <a routerLink="/" class="mobile-menu-item" (click)="closeMobileMenu()">
-      <i class="bi bi-house"></i><span>Home</span>
+      <i class="bi bi-house-fill"></i>
+      <span>მთავარი</span>
     </a>
 
     <ng-container *ngIf="api.isLoggedIn()">
       <div class="mobile-menu-divider"></div>
-      <a routerLink="/dashboard/profile" class="mobile-menu-item" (click)="closeMobileMenu()">
-        <i class="bi bi-person-badge"></i><span>My Profile</span>
+      
+      <a routerLink="/dashboard" class="mobile-menu-item" (click)="closeMobileMenu()">
+        <i class="bi bi-speedometer2"></i>
+        <span>Dashboard</span>
       </a>
+      
+      <a routerLink="/dashboard/profile" class="mobile-menu-item" (click)="closeMobileMenu()">
+        <i class="bi bi-person-badge"></i>
+        <span>ჩემი პროფილი</span>
+      </a>
+      
       <a routerLink="/dashboard/invoices" class="mobile-menu-item" (click)="closeMobileMenu()">
-        <i class="bi bi-receipt"></i><span>Invoices</span>
+        <i class="bi bi-receipt"></i>
+        <span>ინვოისები</span>
       </a>
       
       <div class="mobile-menu-divider"></div>
+      
       <button (click)="onLogout()" class="mobile-menu-item text-danger">
-        <i class="bi bi-box-arrow-right"></i><span>Logout</span>
+        <i class="bi bi-box-arrow-right"></i>
+        <span>გასვლა</span>
       </button>
     </ng-container>
 
     <ng-container *ngIf="!api.isLoggedIn()">
+      <div class="mobile-menu-divider"></div>
+      
       <a routerLink="/login" class="mobile-menu-item" (click)="closeMobileMenu()">
-        <i class="bi bi-box-arrow-in-right"></i><span>Login</span>
+        <i class="bi bi-box-arrow-in-right"></i>
+        <span>ავტორიზაცია</span>
+      </a>
+      
+      <a routerLink="/register" class="mobile-menu-item" (click)="closeMobileMenu()">
+        <i class="bi bi-person-plus"></i>
+        <span>რეგისტრაცია</span>
       </a>
     </ng-container>
   </div>

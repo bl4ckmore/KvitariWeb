@@ -14,14 +14,17 @@
           <div class="hero-buttons">
             <ng-container *ngIf="!api.isLoggedIn()">
               <a routerLink="/register" class="btn-hero btn-hero-light">
+                <i class="bi bi-rocket-takeoff-fill"></i>
                 დაიწყე უფასოდ
               </a>
               <a routerLink="/login" class="btn-hero btn-hero-outline">
+                <i class="bi bi-box-arrow-in-right"></i>
                 ავტორიზაცია
               </a>
             </ng-container>
             
             <a *ngIf="api.isLoggedIn()" routerLink="/dashboard" class="btn-hero btn-hero-light">
+              <i class="bi bi-speedometer2"></i>
               ჩემი Dashboard
             </a>
           </div>
@@ -37,7 +40,7 @@
   <!-- Stats Section -->
   <section class="stats-section">
     <div class="container">
-      <div class="row">
+      <div class="row g-4">
         <div class="col-md-4">
           <div class="stat-card">
             <div class="stat-number">1000+</div>
@@ -71,8 +74,8 @@
       <div class="row g-4">
         <div class="col-md-4">
           <div class="feature-card">
-            <div class="feature-icon icon-primary">
-              <i class="bi bi-lightning-fill"></i>
+            <div class="feature-icon">
+              <i class="bi bi-lightning-charge-fill"></i>
             </div>
             <h5 class="feature-title">სწრაფი ბილინგი</h5>
             <p class="feature-description">ინვოისის შექმნა და გაგზავნა სულ რაღაც 3 კლიკში.</p>
@@ -81,8 +84,8 @@
         
         <div class="col-md-4">
           <div class="feature-card">
-            <div class="feature-icon icon-success">
-              <i class="bi bi-bank"></i>
+            <div class="feature-icon">
+              <i class="bi bi-bank2"></i>
             </div>
             <h5 class="feature-title">ბანკებთან ინტეგრაცია</h5>
             <p class="feature-description">TBC და BOG ბიზნეს გადახდების სრული მხარდაჭერა.</p>
@@ -91,8 +94,8 @@
         
         <div class="col-md-4">
           <div class="feature-card">
-            <div class="feature-icon icon-info">
-              <i class="bi bi-shield-lock"></i>
+            <div class="feature-icon">
+              <i class="bi bi-shield-fill-check"></i>
             </div>
             <h5 class="feature-title">უსაფრთხოება</h5>
             <p class="feature-description">თქვენი მონაცემები დაცულია საბანკო დონის უსაფრთხოებით.</p>
@@ -100,11 +103,11 @@
         </div>
       </div>
 
-      <div class="row g-4 mt-3">
+      <div class="row g-4 mt-2">
         <div class="col-md-4">
           <div class="feature-card">
-            <div class="feature-icon icon-success">
-              <i class="bi bi-file-earmark-text"></i>
+            <div class="feature-icon">
+              <i class="bi bi-file-earmark-pdf-fill"></i>
             </div>
             <h5 class="feature-title">PDF ექსპორტი</h5>
             <p class="feature-description">გადმოწერეთ და გააზიარეთ ინვოისები PDF ფორმატში.</p>
@@ -113,8 +116,8 @@
         
         <div class="col-md-4">
           <div class="feature-card">
-            <div class="feature-icon icon-primary">
-              <i class="bi bi-graph-up"></i>
+            <div class="feature-icon">
+              <i class="bi bi-graph-up-arrow"></i>
             </div>
             <h5 class="feature-title">ანალიტიკა</h5>
             <p class="feature-description">თვალი ადევნეთ თქვენი ბიზნესის ფინანსურ მაჩვენებლებს.</p>
@@ -123,8 +126,8 @@
         
         <div class="col-md-4">
           <div class="feature-card">
-            <div class="feature-icon icon-info">
-              <i class="bi bi-phone"></i>
+            <div class="feature-icon">
+              <i class="bi bi-phone-fill"></i>
             </div>
             <h5 class="feature-title">მობილური აპლიკაცია</h5>
             <p class="feature-description">მართეთ ინვოისები ნებისმიერი მოწყობილობიდან.</p>
@@ -143,7 +146,7 @@
       </div>
       
       <div class="row g-4">
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6">
           <div class="step-card">
             <div class="step-number">1</div>
             <h5 class="step-title">რეგისტრაცია</h5>
@@ -151,7 +154,7 @@
           </div>
         </div>
         
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6">
           <div class="step-card">
             <div class="step-number">2</div>
             <h5 class="step-title">კომპანიის დამატება</h5>
@@ -159,7 +162,7 @@
           </div>
         </div>
         
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6">
           <div class="step-card">
             <div class="step-number">3</div>
             <h5 class="step-title">ინვოისის შექმნა</h5>
@@ -167,7 +170,7 @@
           </div>
         </div>
         
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6">
           <div class="step-card">
             <div class="step-number">4</div>
             <h5 class="step-title">გადახდა</h5>
@@ -181,18 +184,47 @@
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="container">
-      <h2 class="cta-title">მზად ხართ დასაწყებად?</h2>
-      <p class="cta-description">შექმენით უფასო ანგარიში და დაიწყეთ ინვოისების მართვა დღესვე</p>
-      
-      <ng-container *ngIf="!api.isLoggedIn()">
-        <a routerLink="/register" class="btn-cta">
-          დაიწყე უფასოდ
-        </a>
-      </ng-container>
-      
-      <a *ngIf="api.isLoggedIn()" routerLink="/dashboard" class="btn-cta">
-        ჩემი Dashboard
-      </a>
+      <div class="cta-card">
+        <div class="cta-content">
+          <div class="cta-badge">
+            <i class="bi bi-star-fill"></i>
+            <span>100% უფასო სატესტო პერიოდი</span>
+          </div>
+          
+          <h2 class="cta-title">დაიწყეთ ახლავე და<br>განვითარეთ თქვენი ბიზნესი</h2>
+          
+          <p class="cta-description">
+            შემოგვიერთდით 1000+ კმაყოფილ მომხმარებელს და გააადვილეთ თქვენი ფინანსური პროცესები
+          </p>
+          
+          <div class="cta-features">
+            <div class="cta-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>არ არის საჭირო საკრედიტო ბარათი</span>
+            </div>
+            <div class="cta-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>დაყენება 5 წუთში</span>
+            </div>
+            <div class="cta-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>24/7 მხარდაჭერა</span>
+            </div>
+          </div>
+          
+          <ng-container *ngIf="!api.isLoggedIn()">
+            <a routerLink="/register" class="btn-cta">
+              დაიწყე უფასოდ
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </ng-container>
+          
+          <a *ngIf="api.isLoggedIn()" routerLink="/dashboard" class="btn-cta">
+            ჩემი Dashboard
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </main>
