@@ -2,20 +2,21 @@
 .layout { 
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 70px); 
-  background: var(--bg-body); /* Variable */
+  min-height: calc(100vh - 80px); 
+  background: var(--bg-body);
   width: 100%;
-  transition: background-color 0.3s ease;
 }
 
-/* Sidebar */
+/* Sidebar - Sticky below the fixed header */
 .sidebar {
   width: 100%;
-  background: var(--bg-header); /* Variable */
-  border-bottom: 1px solid var(--border-color); /* Variable */
-  box-shadow: var(--shadow-nav); /* Variable */
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-nav);
+  
   position: sticky;
-  top: 70px;
+  top: 80px; /* IMPORTANT: Matches Header Height */
+  
   z-index: 100;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
@@ -30,9 +31,7 @@
   height: 60px;
 }
 
-.sidebar-label {
-  display: none;
-}
+.sidebar-label { display: none; }
 
 /* Navigation Links */
 .nav {
@@ -50,7 +49,7 @@
   gap: 0.625rem;
   padding: 0.625rem 1.25rem;
   border-radius: 0.625rem;
-  color: var(--text-muted); /* Variable */
+  color: var(--text-muted);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9375rem;
@@ -75,7 +74,7 @@
 }
 
 .side-link:hover {
-  background: var(--mobile-item-hover); /* Variable */
+  background: var(--mobile-item-hover);
   color: #667eea;
 }
 
@@ -85,23 +84,15 @@
   font-weight: 600;
 }
 
-.side-link.active::before {
-  width: 80%;
-}
+.side-link.active::before { width: 80%; }
 
-.side-link i {
-  font-size: 1.125rem;
-  flex-shrink: 0;
-}
+.side-link i { font-size: 1.125rem; flex-shrink: 0; }
 
-/* Main Content Area */
+/* Main Content */
 .main { 
   flex: 1;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  background: var(--bg-body); /* Variable */
-  transition: background-color 0.3s ease;
+  background: var(--bg-body);
 }
 
 .content { 
@@ -111,24 +102,8 @@
   padding: 2.5rem 24px;
 }
 
-/* Responsive */
+/* Mobile */
 @media (max-width: 991px) {
   .sidebar { display: none; }
-  .main { background: var(--bg-body); }
   .content { padding: 1.5rem 16px; }
-}
-
-@media (min-width: 992px) and (max-width: 1200px) {
-  .sidebar-inner, .content { max-width: 1200px; }
-  .content { padding: 2rem 24px; }
-}
-
-@media (min-width: 1200px) and (max-width: 1400px) {
-  .sidebar-inner, .content { max-width: 1300px; }
-}
-
-@media (max-width: 768px) {
-  .side-link span { display: none; }
-  .side-link { padding: 0.625rem; justify-content: center; }
-  .side-link i { font-size: 1.25rem; }
 }

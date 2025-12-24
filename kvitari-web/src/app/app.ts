@@ -11,28 +11,32 @@ import { filter } from 'rxjs/operators';
   imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent],
   template: `
     <div class="d-flex flex-column min-vh-100">
-      <app-header *ngIf="showHeader"></app-header>
-      <router-outlet></router-outlet>
-      <app-footer *ngIf="showHeader"></app-footer>
+      <app-header></app-header>
+      
+      <div class="flex-grow-1">
+        <router-outlet></router-outlet>
+      </div>
+      
+      <app-footer *ngIf="showFooter"></app-footer>
     </div>
   `,
-  styles: []
+  styles: [`
+    .flex-grow-1 { flex: 1; }
+  `]
 })
 export class AppComponent implements OnInit {
-  showHeader = true;
+  showFooter = true;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Hide header on dashboard routes
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        // Hide header if URL starts with /dashboard
-        this.showHeader = !event.url.startsWith('/dashboard');
+        // Hide footer on dashboard, but HEADER STAYS
+        this.showFooter = !event.url.startsWith('/dashboard');
       });
 
-    // Check initial route
-    this.showHeader = !this.router.url.startsWith('/dashboard');
+    this.showFooter = !this.router.url.startsWith('/dashboard');
   }
 }

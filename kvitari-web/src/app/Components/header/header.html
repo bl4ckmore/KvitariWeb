@@ -1,11 +1,9 @@
-<nav class="navbar navbar-expand-lg fixed-top shadow-sm px-3 d-none d-lg-flex">
+<nav class="navbar navbar-expand-lg shadow-sm px-3 d-none d-lg-flex">
   <div class="container-fluid">
     <a class="navbar-brand fw-bold fs-4" routerLink="/">Kvitari.ge</a>
 
     <div class="d-flex align-items-center gap-2">
-      
-      <button class="btn-theme-toggle" (click)="themeService.toggleTheme()" 
-              title="Toggle Dark Mode">
+      <button class="btn-theme-toggle" (click)="themeService.toggleTheme()" title="Switch Theme">
         <i class="bi" 
            [class.bi-moon-fill]="themeService.currentTheme() === 'dark'" 
            [class.bi-sun-fill]="themeService.currentTheme() === 'light'"></i>
@@ -16,6 +14,7 @@
           <i class="bi bi-speedometer2"></i>
           <span>Dashboard</span>
         </a>
+
         <button (click)="onLogout()" class="btn-logout-custom">
           <i class="bi bi-box-arrow-right"></i>
           <span>გასვლა</span>
@@ -32,14 +31,13 @@
   </div>
 </nav>
 
-<nav class="navbar navbar-light fixed-top shadow-sm px-3 d-lg-none">
+<nav class="navbar navbar-light shadow-sm px-3 d-lg-none">
   <div class="container-fluid">
     <a class="navbar-brand fw-bold fs-4" routerLink="/">Kvitari.ge</a>
     
-    <div class="d-flex align-items-center gap-2">
+    <div class="d-flex gap-2 align-items-center">
        <button class="btn-theme-toggle mobile-toggle" (click)="themeService.toggleTheme()">
-        <i class="bi" 
-           [class.bi-moon-fill]="themeService.currentTheme() === 'dark'" 
+        <i class="bi" [class.bi-moon-fill]="themeService.currentTheme() === 'dark'" 
            [class.bi-sun-fill]="themeService.currentTheme() === 'light'"></i>
       </button>
 

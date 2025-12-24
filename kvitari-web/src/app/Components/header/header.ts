@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ApiService } from '../../../app/services/api';
-import { ThemeService } from '../../../app/services/theme.service'; 
+import { ThemeService } from '../../../app/services/theme.service'; // Import ThemeService
 
 @Component({
   selector: 'app-header',
@@ -15,22 +15,16 @@ export class HeaderComponent {
   mobileMenuOpen = false;
 
   constructor(
-    public api: ApiService, 
+    public api: ApiService,
     public themeService: ThemeService
   ) {}
 
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
-    if (this.mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
   }
 
   closeMobileMenu() {
     this.mobileMenuOpen = false;
-    document.body.style.overflow = '';
   }
 
   onLogout() {
