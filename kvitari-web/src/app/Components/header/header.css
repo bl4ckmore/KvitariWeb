@@ -1,4 +1,4 @@
-/* Navbar - Professional Header with Centered Content */
+/* Navbar - Professional Header with Balanced Layout */
 .navbar {
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
@@ -29,10 +29,10 @@
   width: 100%;
 }
 
-/* Brand - Professional Emerald Theme */
+/* Brand - Modern Blue Theme */
 .navbar-brand {
   font-weight: 800;
-  color: #047857 !important;
+  color: #2563eb !important;
   font-size: 1.5rem;
   transition: all 0.2s ease;
   letter-spacing: -0.02em;
@@ -41,7 +41,7 @@
 }
 
 .navbar-brand:hover {
-  color: #059669 !important;
+  color: #1d4ed8 !important;
   transform: scale(1.02);
 }
 
@@ -70,13 +70,13 @@
 }
 
 .nav-link-custom:hover {
-  background: rgba(6, 95, 70, 0.06);
-  color: #065f46;
+  background: rgba(37, 99, 235, 0.06);
+  color: #1e40af;
 }
 
 .nav-link-custom.active {
-  background: rgba(6, 95, 70, 0.1);
-  color: #065f46;
+  background: rgba(37, 99, 235, 0.1);
+  color: #1e40af;
   font-weight: 600;
 }
 
@@ -84,11 +84,11 @@
   font-size: 1rem;
 }
 
-/* Login Button - Soft Deep Green */
+/* Login Button - Modern Blue */
 .btn-outline-primary {
-  color: #065f46 !important;
-  border-color: rgba(6, 95, 70, 0.3) !important;
-  background: rgba(6, 95, 70, 0.03) !important;
+  color: #2563eb !important;
+  border-color: rgba(37, 99, 235, 0.3) !important;
+  background: rgba(37, 99, 235, 0.03) !important;
   font-weight: 600 !important;
   padding: 0.5rem 1.5rem !important;
   border-radius: 0.625rem !important;
@@ -101,16 +101,16 @@
 }
 
 .btn-outline-primary:hover {
-  background: rgba(6, 95, 70, 0.1) !important;
-  border-color: rgba(6, 95, 70, 0.5) !important;
-  color: #065f46 !important;
+  background: rgba(37, 99, 235, 0.1) !important;
+  border-color: rgba(37, 99, 235, 0.5) !important;
+  color: #1e40af !important;
 }
 
-/* Logout Button - Soft Minimal Red */
+/* Logout Button - Soft Red */
 .btn-logout-custom {
-  background: rgba(220, 38, 38, 0.03);
-  color: #dc2626;
-  border: 1px solid rgba(220, 38, 38, 0.3);
+  background: rgba(239, 68, 68, 0.03);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
   padding: 0.5rem 1.125rem;
   border-radius: 0.625rem;
   font-weight: 600;
@@ -124,8 +124,8 @@
 }
 
 .btn-logout-custom:hover {
-  background: rgba(220, 38, 38, 0.1);
-  border-color: rgba(220, 38, 38, 0.5);
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.5);
   color: #dc2626;
 }
 
@@ -137,14 +137,14 @@
 .navbar-toggler {
   border: none;
   background: transparent;
-  color: #047857;
+  color: #2563eb;
   padding: 0.5rem;
   transition: all 0.2s ease;
   border-radius: 0.5rem;
 }
 
 .navbar-toggler:hover {
-  color: #059669;
+  color: #1d4ed8;
   background: #f3f4f6;
 }
 
@@ -202,7 +202,7 @@
 }
 
 .mobile-menu-header span {
-  color: #047857;
+  color: #2563eb;
   font-weight: 800;
   letter-spacing: -0.01em;
 }
@@ -262,7 +262,7 @@
   transform: translateY(-50%);
   width: 3px;
   height: 0;
-  background: #10b981;
+  background: #3b82f6;
   border-radius: 0 2px 2px 0;
   transition: height 0.2s ease;
 }
@@ -277,16 +277,16 @@
 }
 
 .mobile-menu-item.text-danger {
-  color: #dc2626;
+  color: #ef4444;
 }
 
 .mobile-menu-item.text-danger:hover {
   background: #fef2f2;
-  color: #b91c1c;
+  color: #dc2626;
 }
 
 .mobile-menu-item.text-danger:hover::before {
-  background: #dc2626;
+  background: #ef4444;
 }
 
 .mobile-menu-item i {

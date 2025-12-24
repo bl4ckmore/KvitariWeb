@@ -12,8 +12,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(5, 150, 105, 0.05) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -38,9 +38,9 @@
   }
 }
 
-/* Brand Title - Deep Green Theme */
+/* Brand Title - Blue Theme */
 .text-primary {
-  background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -48,19 +48,19 @@
   letter-spacing: -0.02em;
 }
 
-/* Loading Spinner - Deep Green Color */
+/* Loading Spinner - Blue Color */
 .spinner-border {
   width: 3.5rem;
   height: 3.5rem;
   border-width: 0.35em;
-  color: #065f46 !important;
+  color: #2563eb !important;
 }
 
 /* Display Heading - Bold Typography */
 .display-4 {
   font-size: 3.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -107,18 +107,18 @@
   box-shadow: 0 8px 16px rgba(17, 24, 39, 0.3);
 }
 
-/* TBC Bank Button - Deep Green Professional */
+/* TBC Bank Button - Blue Professional */
 .btn-outline-primary {
-  color: #065f46 !important;
-  border-color: #065f46 !important;
+  color: #2563eb !important;
+  border-color: #2563eb !important;
   background: white !important;
 }
 
 .btn-outline-primary:hover {
-  background: linear-gradient(135deg, #065f46 0%, #047857 100%) !important;
-  border-color: #065f46 !important;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
+  border-color: #2563eb !important;
   color: white !important;
-  box-shadow: 0 8px 16px rgba(6, 95, 70, 0.3);
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
 }
 
 /* Bank Icons - Enhanced Styling */

@@ -43,25 +43,25 @@
 }
 
 .btn-invoice-primary {
-  background: #10b981;
-  border-color: #10b981;
+  background: #3b82f6;
+  border-color: #3b82f6;
   color: white;
 }
 
 .btn-invoice-primary:hover {
-  background: #059669;
-  border-color: #059669;
+  background: #2563eb;
+  border-color: #2563eb;
 }
 
 .btn-invoice-success {
-  background: #10b981;
-  border-color: #10b981;
+  background: #3b82f6;
+  border-color: #3b82f6;
   color: white;
 }
 
 .btn-invoice-success:hover {
-  background: #059669;
-  border-color: #059669;
+  background: #2563eb;
+  border-color: #2563eb;
 }
 
 .btn-invoice i {
@@ -100,9 +100,9 @@
 }
 
 .stat-badge-success {
-  background: #d1fae5;
-  color: #065f46;
-  border-color: #6ee7b7;
+  background: #dbeafe;
+  color: #1e40af;
+  border-color: #93c5fd;
 }
 
 .stat-badge-warning {
@@ -182,7 +182,7 @@
 }
 
 .status-paid {
-  background: #10b981;
+  background: #3b82f6;
   color: white;
 }
 
@@ -233,25 +233,25 @@
 }
 
 .btn-action-info {
-  border-color: #10b981;
-  color: #10b981;
+  border-color: #3b82f6;
+  color: #3b82f6;
 }
 
 .btn-action-info:hover {
-  background: #10b981;
-  border-color: #10b981;
+  background: #3b82f6;
+  border-color: #3b82f6;
   color: white;
 }
 
 .btn-action-primary {
-  background: #10b981;
-  border-color: #10b981;
+  background: #3b82f6;
+  border-color: #3b82f6;
   color: white;
 }
 
 .btn-action-primary:hover {
-  background: #059669;
-  border-color: #059669;
+  background: #2563eb;
+  border-color: #2563eb;
 }
 
 .btn-action-danger {
@@ -391,8 +391,8 @@
 }
 
 .input-group-custom:focus-within {
-  border-color: #10b981;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .input-prefix {
@@ -422,8 +422,8 @@
 
 /* Alert */
 .alert-success-custom {
-  background: #d1fae5;
-  border: 1px solid #6ee7b7;
+  background: #dbeafe;
+  border: 1px solid #93c5fd;
   border-radius: 0.75rem;
   padding: 1rem;
   margin-bottom: 0;
@@ -431,7 +431,7 @@
 
 .alert-title {
   font-weight: 600;
-  color: #065f46;
+  color: #1e40af;
   margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
@@ -442,7 +442,7 @@
 .btn-alert {
   width: 100%;
   padding: 0.625rem;
-  background: #10b981;
+  background: #3b82f6;
   color: white;
   border: none;
   border-radius: 0.75rem;
@@ -452,7 +452,7 @@
 }
 
 .btn-alert:hover {
-  background: #059669;
+  background: #2563eb;
 }
 
 /* Responsive - Mobile */
