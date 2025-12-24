@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ApiService } from '../../../app/services/api';
+import { ThemeService } from '../../../app/services/theme.service'; 
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,10 @@ import { ApiService } from '../../../app/services/api';
 export class HeaderComponent {
   mobileMenuOpen = false;
 
-  constructor(public api: ApiService) {}
+  constructor(
+    public api: ApiService, 
+    public themeService: ThemeService
+  ) {}
 
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;

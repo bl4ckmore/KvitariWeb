@@ -1,14 +1,16 @@
-/* Auth Container - Content at Top */
+/* Auth Container - Uses Global Body Background */
 .auth-container {
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background: #fafbfc;
+  background: var(--bg-body); /* Variable */
   padding: 5rem 1rem 2rem;
   position: relative;
+  transition: background-color 0.3s ease;
 }
 
+/* Reusing the blob opacity variable for consistent background feel */
 .auth-container::before {
   content: '';
   position: absolute;
@@ -16,23 +18,24 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.08) 0%, transparent 60%),
-              radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.08) 0%, transparent 60%);
+  background: radial-gradient(circle at 20% 20%, rgba(102, 126, 234, var(--hero-blob-opacity, 0.08)) 0%, transparent 60%),
+              radial-gradient(circle at 80% 80%, rgba(118, 75, 162, var(--hero-blob-opacity, 0.08)) 0%, transparent 60%);
   pointer-events: none;
 }
 
-/* Auth Card - Unified Design */
+/* Auth Card */
 .auth-card {
-  background: white;
+  background: var(--bg-card); /* Variable */
   border-radius: 1.5rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  border: 2px solid #e5e7eb;
+  box-shadow: var(--shadow-nav); /* Variable */
+  border: 2px solid var(--border-color); /* Variable */
   animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   max-width: 500px;
   padding: 3rem;
   position: relative;
   z-index: 1;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 @keyframes fadeInUp {
@@ -46,7 +49,7 @@
   }
 }
 
-/* Header - Unified Typography */
+/* Header */
 .auth-header {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -55,7 +58,7 @@
 .auth-title {
   font-size: 2.25rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--primary-gradient); /* Variable */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -64,21 +67,21 @@
 }
 
 .auth-subtitle {
-  color: #6b7280;
+  color: var(--text-muted); /* Variable */
   font-size: 1.0625rem;
   margin: 0;
   font-weight: 400;
   line-height: 1.6;
 }
 
-/* Form Elements - Unified Style */
+/* Form Elements */
 .form-group {
   margin-bottom: 1.5rem;
 }
 
 .form-label {
   font-weight: 600;
-  color: #374151;
+  color: var(--text-main); /* Variable */
   font-size: 1rem;
   margin-bottom: 0.625rem;
   display: block;
@@ -88,18 +91,18 @@
   width: 100%;
   padding: 1rem 1.25rem;
   font-size: 1.0625rem;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--border-color); /* Variable */
   border-radius: 1rem;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  background: #fafbfc;
-  color: #111827;
+  background: var(--bg-body); /* Input background matches body (slightly different from card) */
+  color: var(--text-main); /* Variable */
   font-weight: 500;
 }
 
 .form-control-auth:focus {
   outline: none;
   border-color: #667eea;
-  background: white;
+  background: var(--bg-card); /* Lighten/Darken on focus */
   box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
   transform: translateY(-2px);
 }
@@ -110,15 +113,16 @@
 }
 
 .form-control-auth::placeholder {
-  color: #9ca3af;
+  color: var(--text-muted); /* Variable */
   font-weight: 400;
+  opacity: 0.7;
 }
 
-/* Button - Unified Gradient with Ripple */
+/* Button */
 .btn-auth-submit {
   width: 100%;
   padding: 1.125rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--primary-gradient); /* Variable */
   color: white;
   border: none;
   border-radius: 1rem;
@@ -173,35 +177,23 @@
   transform: none !important;
 }
 
-/* Alert - Unified Error */
-.alert-error {
-  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
-  border: 2px solid #fca5a5;
-  color: #991b1b;
-  padding: 1rem 1.25rem;
-  border-radius: 1rem;
-  font-size: 0.9375rem;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
-
-/* Footer Link - Unified Design */
+/* Footer Link */
 .auth-footer {
   text-align: center;
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 2px solid #f3f4f6;
+  border-top: 2px solid var(--border-light); /* Variable */
 }
 
 .auth-footer-text {
-  color: #6b7280;
+  color: var(--text-muted); /* Variable */
   font-size: 1rem;
   margin: 0;
   font-weight: 500;
 }
 
 .auth-link {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--primary-gradient); /* Variable */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -218,7 +210,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--primary-gradient); /* Variable */
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -230,14 +222,14 @@
   width: 100%;
 }
 
-/* Toast Notification - Unified Design */
+/* Toast Notification */
 .toast-notification {
   position: fixed !important;
   top: 2rem !important;
   right: 2rem !important;
-  background: white !important;
+  background: var(--bg-card) !important; /* Variable */
   border-radius: 1rem;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-card); /* Variable */
   padding: 1.25rem 1.5rem;
   display: flex !important;
   align-items: center;
@@ -259,14 +251,26 @@
   }
 }
 
+/* Toast variants */
 .toast-notification.success {
   border-color: #667eea;
+  /* Keep specific gradient for success but ensure text is readable */
   background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%) !important;
+}
+/* For dark mode, we might want to override the success background to be darker.
+   Since this is a specific class, let's keep it simple or add a dark mode override below */
+[data-theme="dark"] .toast-notification.success {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%) !important;
+  border-color: #3b82f6;
 }
 
 .toast-notification.error {
   border-color: #dc3545;
   background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%) !important;
+}
+[data-theme="dark"] .toast-notification.error {
+  background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%) !important;
+  border-color: #ef4444;
 }
 
 .toast-icon {
@@ -282,7 +286,7 @@
 }
 
 .toast-notification.success .toast-icon {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--primary-gradient);
   color: white;
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
@@ -301,20 +305,28 @@
   font-weight: 700;
   font-size: 1.0625rem;
   margin-bottom: 0.375rem;
-  color: #111827;
+  color: #111827; /* Force dark text on light toast, or white on dark toast */
+}
+[data-theme="dark"] .toast-notification.success .toast-title,
+[data-theme="dark"] .toast-notification.error .toast-title {
+  color: white;
 }
 
 .toast-message {
   font-size: 0.9375rem;
-  color: #6b7280;
+  color: #4b5563;
   margin: 0;
   line-height: 1.5;
+}
+[data-theme="dark"] .toast-notification.success .toast-message,
+[data-theme="dark"] .toast-notification.error .toast-message {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .toast-close {
   background: none;
   border: none;
-  color: #9ca3af;
+  color: #6b7280;
   cursor: pointer;
   padding: 0.5rem;
   display: flex;
@@ -327,22 +339,18 @@
   width: 36px;
   height: 36px;
 }
+[data-theme="dark"] .toast-close {
+  color: rgba(255, 255, 255, 0.7);
+}
 
 .toast-close:hover {
   background: rgba(0, 0, 0, 0.08);
-  color: #374151;
+  color: #1f2937;
   transform: scale(1.1);
 }
-
-/* Loading Spinner Animation */
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.spin {
-  animation: spin 1s linear infinite;
-  display: inline-block;
+[data-theme="dark"] .toast-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
 /* Responsive */

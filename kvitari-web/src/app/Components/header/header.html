@@ -3,6 +3,14 @@
     <a class="navbar-brand fw-bold fs-4" routerLink="/">Kvitari.ge</a>
 
     <div class="d-flex align-items-center gap-2">
+      
+      <button class="btn-theme-toggle" (click)="themeService.toggleTheme()" 
+              title="Toggle Dark Mode">
+        <i class="bi" 
+           [class.bi-moon-fill]="themeService.currentTheme() === 'dark'" 
+           [class.bi-sun-fill]="themeService.currentTheme() === 'light'"></i>
+      </button>
+
       <ng-container *ngIf="api.isLoggedIn()">
         <a routerLink="/dashboard" class="nav-link-custom" routerLinkActive="active">
           <i class="bi bi-speedometer2"></i>
@@ -24,12 +32,21 @@
   </div>
 </nav>
 
-<nav class="navbar navbar-light bg-white fixed-top shadow-sm px-3 d-lg-none">
+<nav class="navbar navbar-light fixed-top shadow-sm px-3 d-lg-none">
   <div class="container-fluid">
     <a class="navbar-brand fw-bold fs-4" routerLink="/">Kvitari.ge</a>
-    <button class="navbar-toggler" type="button" (click)="toggleMobileMenu()">
-      <i class="bi bi-list fs-3"></i>
-    </button>
+    
+    <div class="d-flex align-items-center gap-2">
+       <button class="btn-theme-toggle mobile-toggle" (click)="themeService.toggleTheme()">
+        <i class="bi" 
+           [class.bi-moon-fill]="themeService.currentTheme() === 'dark'" 
+           [class.bi-sun-fill]="themeService.currentTheme() === 'light'"></i>
+      </button>
+
+      <button class="navbar-toggler" type="button" (click)="toggleMobileMenu()">
+        <i class="bi bi-list fs-3"></i>
+      </button>
+    </div>
   </div>
 </nav>
 

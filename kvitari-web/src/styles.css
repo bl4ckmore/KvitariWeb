@@ -1,3 +1,55 @@
+/* DEFINE VARIABLES */
+:root {
+  /* LIGHT THEME (Default) */
+  --bg-body: #fafbfc;
+  --bg-card: #ffffff;
+  --bg-header: #ffffff;
+  --bg-hero: linear-gradient(135deg, #fafbfc 0%, #f3f4f6 100%);
+  
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --text-light: #ffffff;
+  
+  --border-color: #e5e7eb;
+  --border-light: #f0f0f0;
+  
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --shadow-card: 0 12px 32px rgba(102, 126, 234, 0.12);
+  --shadow-nav: 0 4px 16px rgba(0, 0, 0, 0.06);
+  
+  --mobile-menu-bg: #ffffff;
+  --mobile-item-hover: #f3f4f6;
+}
+
+/* DARK THEME OVERRIDES */
+[data-theme="dark"] {
+  --bg-body: #0f172a; /* Slate 900 */
+  --bg-card: #1e293b; /* Slate 800 */
+  --bg-header: #1e293b;
+  --bg-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  
+  --text-main: #f3f4f6; /* Gray 100 */
+  --text-muted: #9ca3af; /* Gray 400 */
+  
+  --border-color: #334155; /* Slate 700 */
+  --border-light: #334155;
+  
+  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --shadow-nav: 0 4px 16px rgba(0, 0, 0, 0.3);
+  
+  --mobile-menu-bg: #1e293b;
+  --mobile-item-hover: #334155;
+}
+
+/* Apply global background immediately */
+body {
+  background-color: var(--bg-body) !important;
+  color: var(--text-main);
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 /* Page Transitions */
 @keyframes fadeInUp {
   from {
@@ -15,29 +67,25 @@
   to { opacity: 1; }
 }
 
-/* Apply to all routed components */
 router-outlet ~ * {
   animation: fadeInUp 0.4s ease;
 }
 
-/* Dashboard specific wrapper */
 .dashboard-wrapper {
-  background-color: #f8f9fa;
+  background-color: var(--bg-body);
   min-height: 100vh;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Hide scrollbar but keep functionality */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--bg-body);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -49,7 +97,6 @@ html {
   background: #999;
 }
 
-/* Custom Utilities */
 .shadow-custom {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
 }
@@ -63,23 +110,14 @@ html {
   transform: translateY(-2px);
 }
 
-/* Card animations */
 .card-animate {
   animation: fadeInUp 0.4s ease;
 }
 
-/* Button transitions */
 .btn {
   transition: all 0.3s ease;
 }
 
-/* Prevent layout shift */
-body {
-  overflow-y: scroll;
-  scrollbar-gutter: stable;
-}
-
-/* Global Rounded Corners */
 .card, .modal-content, .btn, .form-control, .input-group {
   border-radius: 1rem !important;
 }

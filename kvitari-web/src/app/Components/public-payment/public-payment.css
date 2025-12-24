@@ -1,8 +1,9 @@
-/* Payment Wrapper - Professional Background */
+/* Payment Wrapper */
 .payment-wrapper {
   min-height: 100vh;
-  background: #fafbfc;
+  background: var(--bg-body); /* Variable */
   position: relative;
+  transition: background-color 0.3s ease;
 }
 
 .payment-wrapper::before {
@@ -12,63 +13,67 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.05) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 20%, rgba(102, 126, 234, var(--hero-blob-opacity, 0.05)) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(118, 75, 162, var(--hero-blob-opacity, 0.05)) 0%, transparent 50%);
   pointer-events: none;
 }
 
-/* Card Styling - Premium Design */
+/* Card Styling */
 .card {
   animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid #e5e7eb !important;
+  background: var(--bg-card) !important; /* Variable */
+  border: 1px solid var(--border-color) !important; /* Variable */
   border-radius: 1.5rem !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: var(--shadow-card) !important; /* Variable */
   position: relative;
   z-index: 1;
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Brand Title - Purple */
+/* Text Colors */
 .text-primary {
-  color: #667eea !important;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 800 !important;
-  letter-spacing: -0.02em;
 }
 
-/* Loading Spinner - Purple */
-.spinner-border {
-  width: 3.5rem;
-  height: 3.5rem;
-  border-width: 0.35em;
-  color: #667eea !important;
+.text-main {
+  color: var(--text-main) !important;
 }
 
-/* Display Heading - Bold Typography */
+.text-muted {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+/* Info Box */
+.info-container {
+  background: var(--bg-body) !important; /* Variable */
+  border-radius: 1rem !important;
+  border: 1px solid var(--border-color);
+}
+
+/* Display Heading */
 .display-4 {
   font-size: 3.5rem;
   font-weight: 800;
-  color: #667eea !important;
+  color: #667eea !important; /* Keep primary color for money */
   letter-spacing: -0.03em;
+  margin: 1rem 0 2rem;
+  line-height: 1;
 }
 
-/* Info Box - Clean Background */
-.bg-light {
-  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%) !important;
-  border-radius: 1rem !important;
-  border: 1px solid #e5e7eb;
-}
-
-/* Button Base Styling - Professional */
+/* Buttons */
 .btn {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 700;
@@ -83,29 +88,25 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.btn:active {
-  transform: translateY(-1px);
-}
-
-/* Bank of Georgia Button - Dark Professional */
+/* Bank of Georgia Button */
 .btn-outline-dark {
-  color: #212529 !important;
-  border-color: #6c757d !important;
-  background: white !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+  background: var(--bg-body) !important;
 }
 
 .btn-outline-dark:hover {
-  background: #495057 !important;
-  border-color: #495057 !important;
+  background: #fb923c !important; /* Orange accent for BOG */
+  border-color: #fb923c !important;
   color: white !important;
-  box-shadow: 0 8px 16px rgba(73, 80, 87, 0.3);
+  box-shadow: 0 8px 16px rgba(251, 146, 60, 0.3);
 }
 
-/* TBC Bank Button - Purple */
+/* TBC Bank Button */
 .btn-outline-primary {
   color: #667eea !important;
   border-color: #667eea !important;
-  background: white !important;
+  background: var(--bg-body) !important;
 }
 
 .btn-outline-primary:hover {
@@ -115,7 +116,7 @@
   box-shadow: 0 8px 16px rgba(124, 143, 240, 0.3);
 }
 
-/* Bank Icons - Enhanced Styling */
+/* Icons */
 .btn img {
   filter: grayscale(0);
   transition: all 0.2s ease;
@@ -128,134 +129,24 @@
   transform: scale(1.1);
 }
 
-/* Error Icon - Professional Red */
-.text-danger {
-  color: #dc3545 !important;
-}
-
-/* Small Text - Better Readability */
-.small {
-  font-size: 0.9375rem;
-}
-
-.text-muted {
-  color: #6b7280 !important;
-  font-weight: 500;
-}
-
-.text-secondary {
-  color: #6c757d !important;
-}
-
-.fw-bold {
-  font-weight: 700 !important;
-}
-
-/* Info Display - Clean Layout */
-.bg-light .d-flex {
-  padding: 0.25rem 0;
-}
-
-.bg-light .text-muted {
-  font-size: 0.875rem;
-}
-
-.bg-light .fw-bold {
-  font-size: 0.875rem;
-  color: #111827;
-}
-
-/* Loading State Text */
-.payment-wrapper .text-muted {
-  font-size: 1rem;
-  margin-top: 0.75rem;
-}
-
-/* Error State - Professional Display */
 .bi-exclamation-circle {
   font-size: 4rem !important;
   color: #dc3545;
   opacity: 0.9;
 }
 
-/* Button Grid - Better Spacing */
-.d-grid {
-  gap: 1rem;
-}
-
-/* Amount Display - Prominent */
-.display-4 {
-  margin: 1rem 0 2rem;
-  line-height: 1;
-}
-
-/* Card Content Spacing */
-.card .p-4,
-.card .p-md-5 {
-  padding: 2.5rem !important;
-}
-
-@media (min-width: 768px) {
-  .card .p-md-5 {
-    padding: 3rem !important;
-  }
-}
-
-/* Bank Button Content - Better Alignment */
-.btn .d-flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
+/* Spinner */
+.spinner-border {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-width: 0.35em;
+  color: #667eea !important;
 }
 
 /* Responsive */
 @media (max-width: 576px) {
-  .display-4 {
-    font-size: 2.75rem;
-  }
-  
-  .card {
-    padding: 2rem !important;
-    border-radius: 1.25rem !important;
-  }
-  
-  .card .p-4 {
-    padding: 1.75rem !important;
-  }
-  
-  .btn {
-    padding: 0.875rem 1.25rem;
-    font-size: 1rem;
-  }
-  
-  .text-primary {
-    font-size: 1.5rem !important;
-  }
-  
-  .spinner-border {
-    width: 3rem;
-    height: 3rem;
-  }
-}
-
-/* Animation for success state */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-/* Loading state animation */
-.spinner-border {
-  animation: spin 0.75s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  .display-4 { font-size: 2.75rem; }
+  .card { padding: 2rem !important; border-radius: 1.25rem !important; }
+  .btn { padding: 0.875rem 1.25rem; font-size: 1rem; }
+  .spinner-border { width: 3rem; height: 3rem; }
 }
