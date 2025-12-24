@@ -1,38 +1,21 @@
-/* DEFINE VARIABLES */
+/* LIGHT MODE ONLY */
 :root {
-  --bg-body: #fafbfc;
-  --bg-card: #ffffff;
+  --bg-body: #ffffff;
+  --bg-card: #f8f9fa;
   --bg-header: #ffffff;
-  --hero-start: #fafbfc;
-  --hero-end: #f3f4f6;
+  --hero-start: #ffffff;
+  --hero-end: #f8f9fa;
   --hero-blob-opacity: 0.08;
-  --text-main: #1f2937;
-  --text-muted: #6b7280;
+  --text-main: #1a1a1a;
+  --text-muted: #6c757d;
   --text-light: #ffffff;
-  --border-color: #e5e7eb;
-  --border-light: #f0f0f0;
+  --border-color: #e9ecef;
+  --border-light: #f1f3f5;
   --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --shadow-card: 0 12px 32px rgba(102, 126, 234, 0.12);
-  --shadow-nav: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-nav: 0 1px 3px rgba(0, 0, 0, 0.05);
   --mobile-menu-bg: #ffffff;
-  --mobile-item-hover: #f3f4f6;
-}
-
-[data-theme="dark"] {
-  --bg-body: #0f172a;
-  --bg-card: #1e293b;
-  --bg-header: #1e293b;
-  --hero-start: #0f172a;
-  --hero-end: #1e293b;
-  --hero-blob-opacity: 0.15;
-  --text-main: #f3f4f6;
-  --text-muted: #9ca3af;
-  --border-color: #334155;
-  --border-light: #334155;
-  --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.5);
-  --shadow-nav: 0 4px 16px rgba(0, 0, 0, 0.3);
-  --mobile-menu-bg: #1e293b;
-  --mobile-item-hover: #334155;
+  --mobile-item-hover: #f8f9fa;
 }
 
 /* GLOBAL SCROLL & LAYOUT */
@@ -55,11 +38,22 @@ body {
 }
 
 /* Custom Scrollbar */
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--bg-body); }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-[data-theme="dark"] ::-webkit-scrollbar-thumb { background: #475569; }
+::-webkit-scrollbar { 
+  width: 10px; 
+}
+
+::-webkit-scrollbar-track { 
+  background: var(--bg-body); 
+}
+
+::-webkit-scrollbar-thumb { 
+  background: #cbd5e1; 
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover { 
+  background: #94a3b8; 
+}
 
 /* Utilities */
 .card, .modal-content, .btn, .form-control, .input-group {
@@ -71,6 +65,7 @@ body {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 router-outlet ~ * {
   animation: fadeInUp 0.4s ease;
 }

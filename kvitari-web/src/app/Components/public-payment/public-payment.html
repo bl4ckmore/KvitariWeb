@@ -1,51 +1,105 @@
-<div class="payment-wrapper d-flex align-items-center justify-content-center min-vh-100 p-3">
-  <div class="card border-0 shadow-lg p-4 p-md-5 text-center" style="max-width: 450px; border-radius: 24px;">
+<div class="payment-wrapper d-flex align-items-center justify-content-center">
+  <div class="card p-4 p-md-5">
     
-    <h3 class="fw-bold text-primary mb-4">Kvitari.ge</h3>
+    <!-- Header -->
+    <div class="payment-header">
+      <h3 class="payment-brand">Kvitari.ge</h3>
+      <p class="payment-subtitle">უსაფრთხო ონლაინ გადახდა</p>
+    </div>
 
-    <div *ngIf="loading" class="py-4">
-      <div class="spinner-border text-primary mb-3" role="status">
+    <!-- Loading State -->
+    <div *ngIf="loading" class="loading-state">
+      <div class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
-      <p class="text-muted">ინვოისი იტვირთება...</p>
+      <p class="loading-text">ინვოისი იტვირთება...</p>
     </div>
 
-    <div *ngIf="!loading && error" class="py-4">
-      <i class="bi bi-exclamation-circle text-danger fs-1"></i>
-      <p class="mt-3 fw-bold text-main">{{ error }}</p>
-      <a routerLink="/" class="btn btn-outline-primary btn-sm mt-2">მთავარზე დაბრუნება</a>
+    <!-- Error State -->
+    <div *ngIf="!loading && error" class="error-state">
+      <i class="bi bi-exclamation-circle error-icon"></i>
+      <p class="error-message">{{ error }}</p>
+      <a routerLink="/" class="btn-back">
+        <i class="bi bi-arrow-left"></i>
+        მთავარზე დაბრუნება
+      </a>
     </div>
 
-    <div *ngIf="!loading && invoice && !error" class="animate__animated animate__fadeIn">
-      <span class="text-muted small">გადასახდელი თანხა</span>
-      <h1 class="display-4 fw-bold mb-4">₾{{ invoice.amount | number:'1.2-2' }}</h1>
-
-      <div class="info-container p-3 rounded-4 mb-4 text-start">
-        <div class="d-flex justify-content-between mb-2">
-          <span class="text-muted small">კომპანია:</span>
-          <span class="fw-bold small text-main">{{ invoice.companyName }}</span>
-        </div>
-        <div class="d-flex justify-content-between">
-          <span class="text-muted small">თარიღი:</span>
-          <span class="fw-bold small text-main">{{ invoice.createdAt | date:'dd.MM.yyyy' }}</span>
-        </div>
-      </div>
-
-      <p class="small fw-bold text-muted mb-3">აირჩიეთ ბანკი:</p>
+    <!-- Invoice Content -->
+    <div *ngIf="!loading && invoice && !error">
       
-      <div class="d-grid gap-2">
-        <button (click)="pay('bog')" 
-                class="btn btn-outline-dark py-3 rounded-4 fw-bold d-flex align-items-center justify-content-center gap-2">
-          <img src="https://bankofgeorgia.ge/favicon.ico" width="20" alt="BOG"> 
-          საქართველოს ბანკი
-        </button>
-        
-        <button (click)="pay('tbc')" 
-                class="btn btn-outline-primary py-3 rounded-4 fw-bold d-flex align-items-center justify-content-center gap-2">
-          <img src="https://www.tbcbank.ge/favicon.ico" width="20" alt="TBC"> 
-          თიბისი ბანკი
-        </button>
+      <!-- Amount Section -->
+      <div class="amount-section">
+        <div class="amount-label">გადასახდელი თანხა</div>
+        <h1 class="amount-value">₾ {{ invoice.amount | number:'1.2-2' }}</h1>
       </div>
+
+      <!-- Invoice Details -->
+      <div class="invoice-details">
+        <div class="detail-row">
+          <span class="detail-label">ინვოისის ID</span>
+          <span class="detail-value">#{{ (invoice.id || invoiceId) | slice:0:12 }}</span>
+        </div>
+        
+        <div class="detail-row" *ngIf="invoice.companyName">
+          <span class="detail-label">კომპანია</span>
+          <span class="detail-value">{{ invoice.companyName }}</span>
+        </div>
+        
+        <div class="detail-row" *ngIf="invoice.createdAt">
+          <span class="detail-label">შექმნის თარიღი</span>
+          <span class="detail-value">{{ invoice.createdAt | date:'dd.MM.yyyy' }}</span>
+        </div>
+
+        <div class="detail-row" *ngIf="invoice.createdAt">
+          <span class="detail-label">დრო</span>
+          <span class="detail-value">{{ invoice.createdAt | date:'HH:mm' }}</span>
+        </div>
+        
+        <div class="detail-row">
+          <span class="detail-label">თანხა</span>
+          <span class="detail-value">₾ {{ invoice.amount | number:'1.2-2' }}</span>
+        </div>
+      </div>
+
+      <!-- Info Alert -->
+      <div class="invoice-info">
+        <i class="bi bi-info-circle-fill invoice-info-icon"></i>
+        <div class="invoice-info-text">
+          გადახდის შემდეგ თანხა ავტომატურად ჩაირიცხება კომპანიის ანგარიშზე. ინვოისის სტატუსი განახლდება რამდენიმე წუთში.
+        </div>
+      </div>
+
+      <!-- Payment Section -->
+      <div class="payment-section">
+        <h4 class="section-title">აირჩიეთ გადახდის მეთოდი</h4>
+        
+        <div class="payment-buttons">
+          <button (click)="pay('bog')" class="btn-payment">
+            <img src="https://bankofgeorgia.ge/favicon.ico" alt="BOG" onerror="this.style.display='none'"> 
+            <span>საქართველოს ბანკი</span>
+          </button>
+          
+          <button (click)="pay('tbc')" class="btn-payment">
+            <img src="https://www.tbcbank.ge/favicon.ico" alt="TBC" onerror="this.style.display='none'"> 
+            <span>თიბისი ბანკი</span>
+          </button>
+        </div>
+
+        <p class="payment-note">
+          <i class="bi bi-info-circle"></i>
+          თქვენ გადაამისამართდებით შერჩეული ბანკის უსაფრთხო გადახდის გვერდზე
+        </p>
+      </div>
+
+      <!-- Security Note -->
+      <div class="security-note">
+        <p class="security-text">
+          <i class="bi bi-shield-check-fill security-icon"></i>
+          გადახდა დაცულია 256-ბიტიანი SSL დაშიფვრით
+        </p>
+      </div>
+
     </div>
 
   </div>

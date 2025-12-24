@@ -2,133 +2,240 @@
 .auth-container {
   min-height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   background: var(--bg-body);
-  padding: 5rem 1rem 2rem;
+  padding: 2rem 1rem;
   position: relative;
   transition: background-color 0.3s ease;
-}
-
-.auth-container::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.08) 0%, transparent 60%);
-  pointer-events: none;
 }
 
 /* Auth Card */
 .auth-card {
   background: var(--bg-card);
-  border-radius: 1.5rem;
-  box-shadow: var(--shadow-nav);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   border: 1px solid var(--border-color);
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   padding: 3rem;
   position: relative;
   z-index: 1;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Header */
+.auth-header { 
+  text-align: center; 
+  margin-bottom: 2rem; 
 }
 
-/* Header */
-.auth-header { text-align: center; margin-bottom: 2.5rem; }
 .auth-title {
-  font-size: 2.25rem;
-  font-weight: 800;
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--text-main);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   letter-spacing: -0.02em;
 }
+
 .auth-subtitle {
   color: var(--text-muted);
-  font-size: 1.0625rem;
+  font-size: 1rem;
 }
 
 /* Forms */
-.form-group { margin-bottom: 1.5rem; }
+.form-group { 
+  margin-bottom: 1.25rem; 
+}
+
 .form-label {
   font-weight: 600;
   color: var(--text-main);
-  font-size: 1rem;
-  margin-bottom: 0.625rem;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
   display: block;
 }
 
 .form-control-auth {
   width: 100%;
-  padding: 1rem 1.25rem;
-  font-size: 1.0625rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
   border: 1px solid var(--border-color);
-  border-radius: 1rem;
-  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
   background: var(--bg-body);
   color: var(--text-main);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .form-control-auth:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+  border-color: #000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
 }
 
-/* SOLID FLAT BUTTON (Updated) */
+.form-control-auth::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+/* Submit Button */
 .btn-auth-submit {
   width: 100%;
-  padding: 1.125rem;
-  background-color: #667eea !important;
-  background-image: none !important;
+  padding: 0.875rem;
+  background-color: #000 !important;
   color: white !important;
   border: none;
-  border-radius: 1rem;
-  font-weight: 700;
-  font-size: 1.125rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 1rem;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
 }
 
 .btn-auth-submit:hover:not(:disabled) {
-  background-color: #5a67d8 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
+  background-color: #1a1a1a !important;
+  transform: translateY(-1px);
 }
 
 .btn-auth-submit:disabled {
-  opacity: 0.7;
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* Auth Link (Solid) */
+/* Auth Footer */
 .auth-footer {
   text-align: center;
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border-light);
-}
-.auth-footer-text {
-  color: var(--text-muted);
-  font-size: 1rem;
-  font-weight: 500;
-}
-.auth-link {
-  color: #667eea; /* Solid */
-  font-weight: 700;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.auth-link:hover {
-  color: #5a67d8;
-  text-decoration: underline;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
 }
 
-/* Toasts and Responsive styles same as before */
-.toast-notification { /* ... */ }
+.auth-footer-text {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  font-weight: 400;
+}
+
+.auth-link {
+  color: var(--text-main);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.auth-link:hover {
+  opacity: 0.7;
+}
+
+/* Loading Spinner */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+/* Toast Notification */
+.toast-notification {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: var(--bg-card);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 9999;
+  min-width: 300px;
+  border: 1px solid var(--border-color);
+}
+
+.toast-notification.success {
+  border-left: 3px solid #10b981;
+}
+
+.toast-notification.error {
+  border-left: 3px solid #ef4444;
+}
+
+.toast-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.toast-notification.success .toast-icon {
+  background: #10b981;
+  color: white;
+}
+
+.toast-notification.error .toast-icon {
+  background: #ef4444;
+  color: white;
+}
+
+.toast-content { 
+  flex: 1; 
+}
+
+.toast-title {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-main);
+}
+
+.toast-message {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+  font-size: 1.125rem;
+  width: 24px;
+  height: 24px;
+}
+
+.toast-close:hover {
+  background: var(--bg-body);
+  color: var(--text-main);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .auth-card { 
+    padding: 2rem 1.5rem; 
+  }
+  .auth-title { 
+    font-size: 1.75rem; 
+  }
+  .toast-notification { 
+    top: 1rem; 
+    right: 1rem; 
+    left: 1rem; 
+    min-width: auto; 
+  }
+}
