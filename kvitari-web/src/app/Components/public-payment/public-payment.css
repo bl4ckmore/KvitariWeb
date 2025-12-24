@@ -38,9 +38,9 @@
   }
 }
 
-/* Brand Title - Emerald Theme */
+/* Brand Title - Deep Green Theme */
 .text-primary {
-  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  background: linear-gradient(135deg, #065f46 0%, #047857 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -48,19 +48,19 @@
   letter-spacing: -0.02em;
 }
 
-/* Loading Spinner - Emerald Color */
+/* Loading Spinner - Deep Green Color */
 .spinner-border {
   width: 3.5rem;
   height: 3.5rem;
   border-width: 0.35em;
-  color: #10b981 !important;
+  color: #065f46 !important;
 }
 
 /* Display Heading - Bold Typography */
 .display-4 {
   font-size: 3.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #047857 0%, #10b981 100%);
+  background: linear-gradient(135deg, #065f46 0%, #047857 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -107,18 +107,18 @@
   box-shadow: 0 8px 16px rgba(17, 24, 39, 0.3);
 }
 
-/* TBC Bank Button - Emerald Professional */
+/* TBC Bank Button - Deep Green Professional */
 .btn-outline-primary {
-  color: #047857 !important;
-  border-color: #10b981 !important;
+  color: #065f46 !important;
+  border-color: #065f46 !important;
   background: white !important;
 }
 
 .btn-outline-primary:hover {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
-  border-color: #10b981 !important;
+  background: linear-gradient(135deg, #065f46 0%, #047857 100%) !important;
+  border-color: #065f46 !important;
   color: white !important;
-  box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 8px 16px rgba(6, 95, 70, 0.3);
 }
 
 /* Bank Icons - Enhanced Styling */

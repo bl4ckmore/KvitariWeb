@@ -52,51 +52,48 @@
   gap: 0.75rem;
 }
 
-/* Nav Links - Modern Style */
+/* Nav Links - Ultra Smooth Style */
 .nav-link-custom {
   text-decoration: none;
   color: #6b7280;
-  font-weight: 600;
-  padding: 0.625rem 1.25rem;
+  font-weight: 500;
+  padding: 0.5rem 1.125rem;
   border-radius: 0.625rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1.5px solid transparent;
-  background: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
+  border: none;
+  background: transparent;
   font-size: 0.9375rem;
   white-space: nowrap;
 }
 
 .nav-link-custom:hover {
-  background: #f3f4f6;
-  color: #111827;
-  border-color: #e5e7eb;
-  transform: translateY(-1px);
+  background: rgba(6, 95, 70, 0.06);
+  color: #065f46;
 }
 
 .nav-link-custom.active {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  border-color: #10b981;
-  color: white;
-  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.25);
+  background: rgba(6, 95, 70, 0.1);
+  color: #065f46;
+  font-weight: 600;
 }
 
 .nav-link-custom i {
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
-/* Login Button - Emerald Professional Style */
+/* Login Button - Soft Deep Green */
 .btn-outline-primary {
-  color: #047857 !important;
-  border-color: #10b981 !important;
-  background: white !important;
+  color: #065f46 !important;
+  border-color: rgba(6, 95, 70, 0.3) !important;
+  background: rgba(6, 95, 70, 0.03) !important;
   font-weight: 600 !important;
-  padding: 0.625rem 1.5rem !important;
+  padding: 0.5rem 1.5rem !important;
   border-radius: 0.625rem !important;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  border-width: 1.5px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1) !important;
+  border-width: 1px !important;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
@@ -104,36 +101,32 @@
 }
 
 .btn-outline-primary:hover {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
-  border-color: #10b981 !important;
-  color: white !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(16, 185, 129, 0.3);
+  background: rgba(6, 95, 70, 0.1) !important;
+  border-color: rgba(6, 95, 70, 0.5) !important;
+  color: #065f46 !important;
 }
 
-/* Logout Button - Professional Warning Style */
+/* Logout Button - Soft Minimal Red */
 .btn-logout-custom {
-  background: white;
+  background: rgba(220, 38, 38, 0.03);
   color: #dc2626;
-  border: 1.5px solid #fecaca;
-  padding: 0.625rem 1.25rem;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  padding: 0.5rem 1.125rem;
   border-radius: 0.625rem;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
   font-size: 0.9375rem;
   white-space: nowrap;
   cursor: pointer;
 }
 
 .btn-logout-custom:hover {
-  background: #dc2626;
-  color: white;
-  border-color: #dc2626;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(220, 38, 38, 0.25);
+  background: rgba(220, 38, 38, 0.1);
+  border-color: rgba(220, 38, 38, 0.5);
+  color: #dc2626;
 }
 
 .btn-logout-custom i {

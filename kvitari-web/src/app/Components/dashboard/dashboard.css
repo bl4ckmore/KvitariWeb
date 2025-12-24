@@ -60,7 +60,7 @@
   transform: translateY(-50%);
   width: 3px;
   height: 0;
-  background: #10b981;
+  background: #065f46;
   border-radius: 0 2px 2px 0;
   transition: height 0.2s ease;
 }
@@ -71,8 +71,8 @@
 }
 
 .side-link.active {
-  background: #ecfdf5;
-  color: #059669;
+  background: rgba(6, 95, 70, 0.1);
+  color: #065f46;
   font-weight: 600;
 }
 
