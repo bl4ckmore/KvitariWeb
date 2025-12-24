@@ -17,8 +17,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(102, 126, 234, var(--hero-blob-opacity, 0.08)) 0%, transparent 60%),
-              radial-gradient(circle at 80% 80%, rgba(118, 75, 162, var(--hero-blob-opacity, 0.08)) 0%, transparent 60%);
+  background: radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.08) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -57,10 +57,7 @@
 .auth-title {
   font-size: 2.25rem;
   font-weight: 800;
-  background: var(--primary-gradient); /* Variable */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-main); /* Solid Color */
   margin-bottom: 0.75rem;
   letter-spacing: -0.02em;
 }
@@ -90,9 +87,9 @@
   width: 100%;
   padding: 1rem 1.25rem;
   font-size: 1.0625rem;
-  border: 2px solid var(--border-color); /* Variable */
+  border: 1px solid var(--border-color); /* Variable */
   border-radius: 1rem;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   background: var(--bg-body); /* Variable */
   color: var(--text-main); /* Variable */
   font-weight: 500;
@@ -101,7 +98,6 @@
 .form-control-auth:focus {
   outline: none;
   border-color: #667eea;
-  background: var(--bg-card); /* Variable */
   box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
   transform: translateY(-2px);
 }
@@ -117,53 +113,29 @@
   opacity: 0.7;
 }
 
-/* Button */
+/* SOLID PURPLE BUTTON (No Gradient) */
 .btn-auth-submit {
   width: 100%;
   padding: 1.125rem;
-  background: var(--primary-gradient); /* Variable */
+  background-color: #667eea !important; /* Solid Purple */
+  background-image: none !important;
   color: white;
   border: none;
   border-radius: 1rem;
   font-weight: 700;
   font-size: 1.125rem;
   cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   margin-top: 1rem;
-  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.35);
-  letter-spacing: 0.01em;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
   position: relative;
   overflow: hidden;
 }
 
-.btn-auth-submit::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s ease, height 0.6s ease;
-  z-index: 0;
-}
-
-.btn-auth-submit:active:not(:disabled)::before {
-  width: 400px;
-  height: 400px;
-}
-
-.btn-auth-submit span,
-.btn-auth-submit i {
-  position: relative;
-  z-index: 1;
-}
-
 .btn-auth-submit:hover:not(:disabled) {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.45);
+  background-color: #5a67d8 !important; /* Darker Flat Purple */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
 }
 
 .btn-auth-submit:active:not(:disabled) {
@@ -181,7 +153,7 @@
   text-align: center;
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 2px solid var(--border-light); /* Variable */
+  border-top: 1px solid var(--border-light); /* Variable */
 }
 
 .auth-footer-text {
@@ -192,33 +164,15 @@
 }
 
 .auth-link {
-  background: var(--primary-gradient); /* Variable */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #667eea; /* Solid Purple Text */
   font-weight: 700;
   text-decoration: none;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-
-.auth-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary-gradient); /* Variable */
-  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.3s ease;
 }
 
 .auth-link:hover {
-  filter: brightness(1.15);
-}
-
-.auth-link:hover::after {
-  width: 100%;
+  color: #5a67d8;
+  text-decoration: underline;
 }
 
 /* Toast Notification (Shared styling) */
@@ -276,7 +230,7 @@
 }
 
 .toast-notification.success .toast-icon {
-  background: var(--primary-gradient);
+  background: #667eea;
   color: white;
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
