@@ -1,5 +1,5 @@
 <div class="auth-container">
-  <div class="auth-card p-4 p-lg-5">
+  <div class="auth-card">
     <div class="auth-header">
       <h2 class="auth-title">რეგისტრაცია</h2>
       <p class="auth-subtitle">შექმენით ბიზნეს პროფილი უფასოდ</p>
@@ -16,6 +16,7 @@
               name="cName" 
               class="form-control-auth" 
               placeholder="შპს ბიზნესი"
+              [disabled]="isLoading"
               required>
           </div>
         </div>
@@ -29,6 +30,7 @@
               name="idNum" 
               class="form-control-auth" 
               placeholder="200000000"
+              [disabled]="isLoading"
               required>
           </div>
         </div>
@@ -42,6 +44,7 @@
           name="email" 
           class="form-control-auth" 
           placeholder="info@company.ge"
+          [disabled]="isLoading"
           required>
       </div>
 
@@ -53,15 +56,15 @@
           name="pass" 
           class="form-control-auth" 
           placeholder="მინიმუმ 8 სიმბოლო"
+          [disabled]="isLoading"
           required>
       </div>
 
-      <div *ngIf="errorMsg" class="alert-error">
-        {{ errorMsg }}
-      </div>
-
-      <button type="submit" class="btn-auth-submit">
-        ანგარიშის შექმნა
+      <button type="submit" class="btn-auth-submit" [disabled]="isLoading">
+        <span *ngIf="!isLoading">ანგარიშის შექმნა</span>
+        <span *ngIf="isLoading">
+          <i class="bi bi-arrow-repeat spin"></i> იტვირთება...
+        </span>
       </button>
 
       <div class="auth-footer">
@@ -73,3 +76,29 @@
     </form>
   </div>
 </div>
+
+<!-- Toast Notification - Outside container -->
+<div *ngIf="showToast" class="toast-notification" [ngClass]="toastType" style="display: block !important;">
+  <div class="toast-icon">
+    <span *ngIf="toastType === 'success'">✓</span>
+    <span *ngIf="toastType === 'error'">✕</span>
+  </div>
+  <div class="toast-content">
+    <div class="toast-title">{{ toastTitle }}</div>
+    <p class="toast-message">{{ toastMessage }}</p>
+  </div>
+  <button class="toast-close" (click)="closeToast()">
+    ✕
+  </button>
+</div>
+
+<style>
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+</style>

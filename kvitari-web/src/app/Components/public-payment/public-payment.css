@@ -1,14 +1,30 @@
-/* Payment Wrapper */
+/* Payment Wrapper - Professional Background */
 .payment-wrapper {
   min-height: 100vh;
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  position: relative;
 }
 
-/* Card Styling */
+.payment-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(5, 150, 105, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Card Styling - Premium Design */
 .card {
-  animation: fadeInUp 0.5s ease;
-  border: 1px solid #e0e0e0 !important;
-  border-radius: 2rem !important;
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #e5e7eb !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.1) !important;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes fadeInUp {
@@ -22,86 +38,230 @@
   }
 }
 
-/* Brand Title */
+/* Brand Title - Emerald Theme */
 .text-primary {
-  color: #1a1a2e !important;
+  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
 }
 
-/* Loading Spinner */
+/* Loading Spinner - Emerald Color */
 .spinner-border {
-  width: 3rem;
-  height: 3rem;
-  border-width: 0.3em;
-  color: #1a1a2e !important;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-width: 0.35em;
+  color: #10b981 !important;
 }
 
-/* Display Heading */
+/* Display Heading - Bold Typography */
 .display-4 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  color: #1a1a2e;
+  background: linear-gradient(135deg, #047857 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.03em;
 }
 
-/* Info Box */
+/* Info Box - Clean Background */
 .bg-light {
-  background: #f8f9fa !important;
-  border-radius: 1.5rem !important;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%) !important;
+  border-radius: 1rem !important;
+  border: 1px solid #e5e7eb;
 }
 
-/* Button Styling */
+/* Button Base Styling - Professional */
 .btn {
-  transition: all 0.3s ease;
-  font-weight: 600;
-  border-radius: 1rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 700;
+  border-radius: 0.875rem !important;
+  padding: 1rem 1.5rem;
+  font-size: 1.0625rem;
+  border-width: 2px !important;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
+.btn:active {
+  transform: translateY(-1px);
+}
+
+/* Bank of Georgia Button - Dark Professional */
 .btn-outline-dark {
-  border-width: 2px;
-  color: #1a1a2e;
-  border-color: #1a1a2e;
+  color: #111827 !important;
+  border-color: #374151 !important;
+  background: white !important;
 }
 
 .btn-outline-dark:hover {
-  background-color: #1a1a2e;
-  border-color: #1a1a2e;
-  color: white;
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;
+  border-color: #111827 !important;
+  color: white !important;
+  box-shadow: 0 8px 16px rgba(17, 24, 39, 0.3);
 }
 
+/* TBC Bank Button - Emerald Professional */
 .btn-outline-primary {
-  border-width: 2px;
-  color: #2d6a4f;
-  border-color: #2d6a4f;
+  color: #047857 !important;
+  border-color: #10b981 !important;
+  background: white !important;
 }
 
 .btn-outline-primary:hover {
-  background-color: #2d6a4f;
-  border-color: #2d6a4f;
-  color: white;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  border-color: #10b981 !important;
+  color: white !important;
+  box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
 }
 
-/* Bank Icons */
+/* Bank Icons - Enhanced Styling */
 .btn img {
   filter: grayscale(0);
-  transition: filter 0.2s ease;
+  transition: all 0.2s ease;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
-/* Error Icon */
+.btn:hover img {
+  transform: scale(1.1);
+}
+
+/* Error Icon - Professional Red */
 .text-danger {
-  color: #c00 !important;
+  color: #dc2626 !important;
+}
+
+/* Small Text - Better Readability */
+.small {
+  font-size: 0.9375rem;
+}
+
+.text-muted {
+  color: #6b7280 !important;
+  font-weight: 500;
+}
+
+.text-secondary {
+  color: #374151 !important;
+}
+
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+/* Info Display - Clean Layout */
+.bg-light .d-flex {
+  padding: 0.25rem 0;
+}
+
+.bg-light .text-muted {
+  font-size: 0.875rem;
+}
+
+.bg-light .fw-bold {
+  font-size: 0.875rem;
+  color: #111827;
+}
+
+/* Loading State Text */
+.payment-wrapper .text-muted {
+  font-size: 1rem;
+  margin-top: 0.75rem;
+}
+
+/* Error State - Professional Display */
+.bi-exclamation-circle {
+  font-size: 4rem !important;
+  color: #dc2626;
+  opacity: 0.9;
+}
+
+/* Button Grid - Better Spacing */
+.d-grid {
+  gap: 1rem;
+}
+
+/* Amount Display - Prominent */
+.display-4 {
+  margin: 1rem 0 2rem;
+  line-height: 1;
+}
+
+/* Card Content Spacing */
+.card .p-4,
+.card .p-md-5 {
+  padding: 2.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .card .p-md-5 {
+    padding: 3rem !important;
+  }
+}
+
+/* Bank Button Content - Better Alignment */
+.btn .d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
 /* Responsive */
 @media (max-width: 576px) {
   .display-4 {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
   }
   
   .card {
-    padding: 1.5rem !important;
+    padding: 2rem !important;
+    border-radius: 1.25rem !important;
+  }
+  
+  .card .p-4 {
+    padding: 1.75rem !important;
+  }
+  
+  .btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+  }
+  
+  .text-primary {
+    font-size: 1.5rem !important;
+  }
+  
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* Animation for success state */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Loading state animation */
+.spinner-border {
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
