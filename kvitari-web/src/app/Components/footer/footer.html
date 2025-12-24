@@ -68,16 +68,16 @@
       </div>
 
       <div class="col-lg-3 col-md-6 mb-4">
-        <h6 class="mb-3"></h6>
+        <h6 class="mb-3">NAVIGATION</h6>
         <ul class="list-unstyled">
           <li class="mb-2" *ngIf="api.isLoggedIn()">
             <a routerLink="/dashboard">Dashboard</a>
           </li>
           <li class="mb-2" *ngIf="!api.isLoggedIn()">
-            <a routerLink="/login">ავტორიზაცია</a>
+            <a routerLink="/login">Login</a>
           </li>
           <li class="mb-2" *ngIf="!api.isLoggedIn()">
-            <a routerLink="/register">რეგისტრაცია</a>
+            <a routerLink="/register">Register</a>
           </li>
         </ul>
       </div>
@@ -87,6 +87,7 @@
 
     <div class="row footer-bottom-row">
       <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+        
         <p class="mb-0">
           © 2025 Kvitari Billing System. All rights reserved.
         </p>

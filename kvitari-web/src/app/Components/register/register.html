@@ -1,21 +1,21 @@
 <div class="auth-container">
   <div class="auth-card">
     <div class="auth-header">
-      <h2 class="auth-title">რეგისტრაცია</h2>
-      <p class="auth-subtitle">შექმენით ბიზნეს პროფილი უფასოდ</p>
+      <h2 class="auth-title">Create new account</h2>
+      <p class="auth-subtitle">Create a business profile</p>
     </div>
 
     <form (ngSubmit)="onRegister()">
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label class="form-label">კომპანიის დასახელება</label>
+            <label class="form-label">Company Name</label>
             <input 
               type="text" 
               [(ngModel)]="registerData.companyName" 
               name="cName" 
               class="form-control-auth" 
-              placeholder="შპს ბიზნესი"
+              placeholder="Company LLC"
               [disabled]="isLoading"
               required>
           </div>
@@ -23,7 +23,7 @@
         
         <div class="col-md-6">
           <div class="form-group">
-            <label class="form-label">საიდენტიფიკაციო კოდი</label>
+            <label class="form-label">Identification Number</label>
             <input 
               type="text" 
               [(ngModel)]="registerData.identificationNumber" 
@@ -37,7 +37,7 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label">სამუშაო ელ-ფოსტა</label>
+        <label class="form-label">Email</label>
         <input 
           type="email" 
           [(ngModel)]="registerData.email" 
@@ -49,28 +49,28 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label">პაროლი</label>
+        <label class="form-label">Password</label>
         <input 
           type="password" 
           [(ngModel)]="registerData.password" 
           name="pass" 
           class="form-control-auth" 
-          placeholder="მინიმუმ 8 სიმბოლო"
+          placeholder="minimum 8 characters"
           [disabled]="isLoading"
           required>
       </div>
 
       <button type="submit" class="btn-auth-submit" [disabled]="isLoading">
-        <span *ngIf="!isLoading">ანგარიშის შექმნა</span>
+        <span *ngIf="!isLoading">Create account</span>
         <span *ngIf="isLoading">
-          <i class="bi bi-arrow-repeat spin"></i> იტვირთება...
+          <i class="bi bi-arrow-repeat spin"></i> Loading...
         </span>
       </button>
 
       <div class="auth-footer">
         <p class="auth-footer-text">
-          უკვე გაქვთ ანგარიში? 
-          <a routerLink="/login" class="auth-link">ავტორიზაცია</a>
+          Already have an account? 
+          <a routerLink="/login" class="auth-link">Authorize</a>
         </p>
       </div>
     </form>

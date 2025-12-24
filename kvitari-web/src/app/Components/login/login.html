@@ -1,13 +1,13 @@
 <div class="auth-container">
   <div class="auth-card">
     <div class="auth-header">
-      <h2 class="auth-title">ავტორიზაცია</h2>
-      <p class="auth-subtitle">მართეთ თქვენი ინვოისები ერთ სივრცეში</p>
+      <h2 class="auth-title">Get Into Your Account</h2>
+      <p class="auth-subtitle">Manage your invoices in one space</p>
     </div>
 
     <form (ngSubmit)="onLogin()">
       <div class="form-group">
-        <label class="form-label">ელ-ფოსტა</label>
+        <label class="form-label">Email</label>
         <input 
           type="email" 
           [(ngModel)]="email" 
@@ -19,7 +19,7 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label">პაროლი</label>
+        <label class="form-label">Password</label>
         <input 
           type="password" 
           [(ngModel)]="password" 
@@ -31,16 +31,16 @@
       </div>
 
       <button type="submit" class="btn-auth-submit" [disabled]="isLoading">
-        <span *ngIf="!isLoading">ავტორიზაცია</span>
+        <span *ngIf="!isLoading">Authorize</span>
         <span *ngIf="isLoading">
-          <i class="bi bi-arrow-repeat spin"></i> იტვირთება...
+          <i class="bi bi-arrow-repeat spin"></i> Loading...
         </span>
       </button>
 
       <div class="auth-footer">
         <p class="auth-footer-text">
-          არ გაქვთ ანგარიში? 
-          <a routerLink="/register" class="auth-link">დარეგისტრირდით</a>
+          Don't have an account? 
+          <a routerLink="/register" class="auth-link">Create one</a>
         </p>
       </div>
     </form>
