@@ -12,8 +12,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 20%, rgba(13, 110, 253, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(10, 88, 202, 0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -38,32 +38,26 @@
   }
 }
 
-/* Brand Title - Blue Theme */
+/* Brand Title - Bootstrap Blue */
 .text-primary {
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #0d6efd !important;
   font-weight: 800 !important;
   letter-spacing: -0.02em;
 }
 
-/* Loading Spinner - Blue Color */
+/* Loading Spinner - Bootstrap Blue */
 .spinner-border {
   width: 3.5rem;
   height: 3.5rem;
   border-width: 0.35em;
-  color: #2563eb !important;
+  color: #0d6efd !important;
 }
 
 /* Display Heading - Bold Typography */
 .display-4 {
   font-size: 3.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #0d6efd !important;
   letter-spacing: -0.03em;
 }
 
@@ -78,7 +72,7 @@
 .btn {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 700;
-  border-radius: 0.875rem !important;
+  border-radius: 0.625rem !important;
   padding: 1rem 1.5rem;
   font-size: 1.0625rem;
   border-width: 2px !important;
@@ -95,30 +89,30 @@
 
 /* Bank of Georgia Button - Dark Professional */
 .btn-outline-dark {
-  color: #111827 !important;
-  border-color: #374151 !important;
+  color: #212529 !important;
+  border-color: #6c757d !important;
   background: white !important;
 }
 
 .btn-outline-dark:hover {
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;
-  border-color: #111827 !important;
+  background: #212529 !important;
+  border-color: #212529 !important;
   color: white !important;
-  box-shadow: 0 8px 16px rgba(17, 24, 39, 0.3);
+  box-shadow: 0 8px 16px rgba(33, 37, 41, 0.3);
 }
 
-/* TBC Bank Button - Blue Professional */
+/* TBC Bank Button - Bootstrap Blue */
 .btn-outline-primary {
-  color: #2563eb !important;
-  border-color: #2563eb !important;
+  color: #0d6efd !important;
+  border-color: #0d6efd !important;
   background: white !important;
 }
 
 .btn-outline-primary:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
-  border-color: #2563eb !important;
+  background: #0d6efd !important;
+  border-color: #0d6efd !important;
   color: white !important;
-  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 8px 16px rgba(13, 110, 253, 0.3);
 }
 
 /* Bank Icons - Enhanced Styling */
@@ -136,7 +130,7 @@
 
 /* Error Icon - Professional Red */
 .text-danger {
-  color: #dc2626 !important;
+  color: #dc3545 !important;
 }
 
 /* Small Text - Better Readability */
@@ -150,7 +144,7 @@
 }
 
 .text-secondary {
-  color: #374151 !important;
+  color: #6c757d !important;
 }
 
 .fw-bold {
@@ -180,7 +174,7 @@
 /* Error State - Professional Display */
 .bi-exclamation-circle {
   font-size: 4rem !important;
-  color: #dc2626;
+  color: #dc3545;
   opacity: 0.9;
 }
 

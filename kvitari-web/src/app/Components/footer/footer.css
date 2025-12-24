@@ -1,6 +1,6 @@
-/* Footer Styling - Modern Blue Theme */
+/* Footer Styling - Bootstrap Dark Blue Theme */
 footer {
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%) !important;
+  background: linear-gradient(135deg, #052c65 0%, #084298 50%, #0a58ca 100%) !important;
   margin-top: auto;
   position: relative;
   overflow: hidden;
@@ -13,8 +13,8 @@ footer::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 30%, rgba(13, 110, 253, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(10, 88, 202, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -25,7 +25,7 @@ footer > * {
 
 /* Footer Headings */
 footer h4 {
-  color: #93c5fd !important;
+  color: #9ec5fe !important;
   font-weight: 800 !important;
   letter-spacing: -0.02em;
   font-size: 1.75rem !important;
@@ -59,12 +59,12 @@ footer a::after {
   left: 0;
   width: 0;
   height: 2px;
-  background: #93c5fd;
+  background: #9ec5fe;
   transition: width 0.2s ease;
 }
 
 footer a:hover {
-  color: #93c5fd !important;
+  color: #9ec5fe !important;
   padding-left: 4px;
 }
 
@@ -74,13 +74,13 @@ footer a:hover::after {
 
 /* Dashboard Link - Special Highlight */
 footer a[routerLink="/dashboard"] {
-  color: #93c5fd !important;
+  color: #9ec5fe !important;
   font-weight: 700 !important;
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
   padding: 0.375rem 0.75rem;
-  background: rgba(147, 197, 253, 0.15);
+  background: rgba(158, 197, 254, 0.15);
   border-radius: 0.5rem;
   transition: all 0.2s ease;
 }
@@ -90,7 +90,7 @@ footer a[routerLink="/dashboard"]::after {
 }
 
 footer a[routerLink="/dashboard"]:hover {
-  background: rgba(147, 197, 253, 0.25);
+  background: rgba(158, 197, 254, 0.25);
   transform: translateX(4px);
   padding-left: 0.75rem;
 }
@@ -100,7 +100,7 @@ footer a[routerLink="/dashboard"]:hover {
   background: rgba(255, 255, 255, 0.1) !important;
   color: white !important;
   border: 2px solid rgba(255, 255, 255, 0.25) !important;
-  border-radius: 0.75rem !important;
+  border-radius: 0.625rem !important;
   font-weight: 600 !important;
   padding: 0.625rem 1.375rem !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -113,7 +113,7 @@ footer a[routerLink="/dashboard"]:hover {
 
 .btn-outline-light:hover {
   background: white !important;
-  color: #2563eb !important;
+  color: #0d6efd !important;
   border-color: white !important;
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(255, 255, 255, 0.25);
@@ -130,7 +130,7 @@ footer a[routerLink="/dashboard"]:hover {
 /* Contact Icons */
 footer .bi-envelope,
 footer .bi-telephone {
-  color: #93c5fd;
+  color: #9ec5fe;
   font-size: 1.125rem;
 }
 

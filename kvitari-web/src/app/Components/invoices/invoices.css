@@ -1,10 +1,11 @@
-/* Invoice Card */
+/* Invoice Card - Same Width as Profile */
 .invoice-card {
   background: #fff;
   border-radius: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   border: 1px solid #e5e7eb;
   overflow: hidden;
+  width: 100%;
 }
 
 /* Card Header */
@@ -30,7 +31,7 @@
 /* Buttons */
 .btn-invoice {
   padding: 0.625rem 1.25rem;
-  border-radius: 0.75rem;
+  border-radius: 0.625rem;
   font-weight: 600;
   font-size: 0.875rem;
   border: 1px solid transparent;
@@ -43,25 +44,25 @@
 }
 
 .btn-invoice-primary {
-  background: #3b82f6;
-  border-color: #3b82f6;
+  background: #0d6efd;
+  border-color: #0d6efd;
   color: white;
 }
 
 .btn-invoice-primary:hover {
-  background: #2563eb;
-  border-color: #2563eb;
+  background: #0a58ca;
+  border-color: #0a58ca;
 }
 
 .btn-invoice-success {
-  background: #3b82f6;
-  border-color: #3b82f6;
+  background: #198754;
+  border-color: #198754;
   color: white;
 }
 
 .btn-invoice-success:hover {
-  background: #2563eb;
-  border-color: #2563eb;
+  background: #157347;
+  border-color: #157347;
 }
 
 .btn-invoice i {
@@ -78,7 +79,7 @@
 
 .stat-badge {
   padding: 0.5rem 1rem;
-  border-radius: 0.75rem;
+  border-radius: 0.625rem;
   font-weight: 600;
   font-size: 0.875rem;
   display: inline-flex;
@@ -100,15 +101,15 @@
 }
 
 .stat-badge-success {
-  background: #dbeafe;
-  color: #1e40af;
-  border-color: #93c5fd;
+  background: #d1e7dd;
+  color: #0a3622;
+  border-color: #a3cfbb;
 }
 
 .stat-badge-warning {
-  background: #fef3c7;
-  color: #92400e;
-  border-color: #fde68a;
+  background: #fff3cd;
+  color: #664d03;
+  border-color: #ffecb5;
 }
 
 .stat-badge i {
@@ -182,13 +183,13 @@
 }
 
 .status-paid {
-  background: #3b82f6;
+  background: #198754;
   color: white;
 }
 
 .status-pending {
-  background: #f59e0b;
-  color: white;
+  background: #ffc107;
+  color: #212529;
 }
 
 /* Action Buttons Container */
@@ -202,7 +203,7 @@
 /* Base Action Button */
 .btn-action {
   padding: 0.5rem 1rem;
-  border-radius: 0.75rem;
+  border-radius: 0.625rem;
   font-size: 0.875rem;
   font-weight: 500;
   border: 1px solid;
@@ -233,35 +234,35 @@
 }
 
 .btn-action-info {
-  border-color: #3b82f6;
-  color: #3b82f6;
+  border-color: #0dcaf0;
+  color: #055160;
 }
 
 .btn-action-info:hover {
-  background: #3b82f6;
-  border-color: #3b82f6;
-  color: white;
+  background: #0dcaf0;
+  border-color: #0dcaf0;
+  color: #212529;
 }
 
 .btn-action-primary {
-  background: #3b82f6;
-  border-color: #3b82f6;
+  background: #0d6efd;
+  border-color: #0d6efd;
   color: white;
 }
 
 .btn-action-primary:hover {
-  background: #2563eb;
-  border-color: #2563eb;
+  background: #0a58ca;
+  border-color: #0a58ca;
 }
 
 .btn-action-danger {
-  border-color: #ef4444;
-  color: #ef4444;
+  border-color: #dc3545;
+  color: #dc3545;
 }
 
 .btn-action-danger:hover {
-  background: #ef4444;
-  border-color: #ef4444;
+  background: #dc3545;
+  border-color: #dc3545;
   color: white;
 }
 
@@ -385,14 +386,14 @@
 .input-group-custom {
   display: flex;
   border: 1px solid #d1d5db;
-  border-radius: 0.75rem;
+  border-radius: 0.625rem;
   overflow: hidden;
   transition: all 0.2s ease;
 }
 
 .input-group-custom:focus-within {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
 }
 
 .input-prefix {
@@ -422,16 +423,16 @@
 
 /* Alert */
 .alert-success-custom {
-  background: #dbeafe;
-  border: 1px solid #93c5fd;
-  border-radius: 0.75rem;
+  background: #d1e7dd;
+  border: 1px solid #a3cfbb;
+  border-radius: 0.625rem;
   padding: 1rem;
   margin-bottom: 0;
 }
 
 .alert-title {
   font-weight: 600;
-  color: #1e40af;
+  color: #0a3622;
   margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
@@ -442,17 +443,17 @@
 .btn-alert {
   width: 100%;
   padding: 0.625rem;
-  background: #3b82f6;
+  background: #198754;
   color: white;
   border: none;
-  border-radius: 0.75rem;
+  border-radius: 0.625rem;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 .btn-alert:hover {
-  background: #2563eb;
+  background: #157347;
 }
 
 /* Responsive - Mobile */
